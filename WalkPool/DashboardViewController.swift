@@ -9,11 +9,22 @@
 import UIKit
 import MapKit
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var mapView: MKMapView!
+    var locationManager: CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
         
         // 1
         let location = CLLocationCoordinate2D(
@@ -28,10 +39,12 @@ class DashboardViewController: UIViewController {
         //3
         let annotation = MKPointAnnotation()
         annotation.setCoordinate(location)
-        annotation.title = "Sara Menefee"
+        annotation.title = "You are here"
         annotation.subtitle = "This is your current location"
         mapView.addAnnotation(annotation)
     }
+    
+    
 
     @IBAction func onTapDismiss(sender: AnyObject) {
         navigationController?.popToRootViewControllerAnimated(true)
