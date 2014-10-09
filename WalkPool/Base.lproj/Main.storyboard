@@ -50,15 +50,16 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hjC-a0-OGh">
-                                        <rect key="frame" x="25" y="281" width="270" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4kq-xs-K8x">
+                                        <rect key="frame" x="25" y="274" width="270" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Sign In" backgroundImage="buttonactive">
                                             <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="S66-jO-yye" kind="modal" id="1uk-tG-mlh"/>
+                                            <action selector="onClickSignIn:" destination="iu2-iz-6uG" eventType="touchUpInside" id="eJL-gK-wgl"/>
+                                            <segue destination="S66-jO-yye" kind="modal" modalTransitionStyle="crossDissolve" id="Gf9-8s-4TY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -197,7 +198,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="cgA-Ko-aFB" kind="push" id="bre-me-IrN"/>
+                                            <action selector="onClickSignIn:" destination="iu2-iz-6uG" eventType="touchUpInside" id="aVm-11-Xga"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -208,12 +209,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="pYZ-rz-BTL"/>
                     <connections>
+                        <outlet property="emailTextField" destination="WZw-vd-Ky3" id="4h1-0r-tqi"/>
                         <outlet property="formView" destination="nj3-Mc-5dm" id="Zlp-aN-fhC"/>
+                        <outlet property="passwordTextField" destination="Rfu-wP-oXS" id="qOv-e3-hmE"/>
+                        <outlet property="signInBtn" destination="dFi-4g-Xb4" id="zhU-o8-rJv"/>
+                        <segue destination="cgA-Ko-aFB" kind="modal" identifier="logInSegue" modalTransitionStyle="crossDissolve" id="snh-9W-pzE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LC-Xo-Hbh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386" y="280"/>
+            <point key="canvasLocation" x="-414" y="280"/>
         </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="gKW-KQ-iDl">
@@ -223,20 +228,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" id="x9X-9Z-QyP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f44-6V-ZDy">
-                                <rect key="frame" x="0.0" y="26" width="37" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onTapDismiss:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="lek-kt-2JE"/>
-                                </connections>
-                            </button>
                             <scrollView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="fzD-X6-qVh">
                                 <rect key="frame" x="0.0" y="70" width="320" height="498"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -268,6 +259,27 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" id="x9X-9Z-QyP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f44-6V-ZDy">
+                                <rect key="frame" x="0.0" y="26" width="37" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTapDismiss:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="lek-kt-2JE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1KV-RL-u6u">
+                                <rect key="frame" x="22" y="37" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -288,6 +300,7 @@
         <image name="loginform" width="270" height="91"/>
         <image name="logo" width="165" height="39"/>
         <image name="matches" width="320" height="568"/>
+        <image name="menu" width="20" height="15"/>
         <image name="profile" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
