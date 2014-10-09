@@ -1,8 +1,3 @@
-CodePath-Group-Assignment
-=========================
-
-Final project with Corin Nader, Jim Fell, and Sara Menefee
-
 # Walkpool
 
 **Group Contributors** Corin Nader, Sara Menefee, Jim Fell
