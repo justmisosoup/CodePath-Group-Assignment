@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBY-nC-9ao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-825" y="280"/>
+            <point key="canvasLocation" x="-851" y="286"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -51,7 +51,7 @@
                                             <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <state key="selected" image="8A462BF5-C4A9-402B-8E6B-8CDAE5DC252F" backgroundImage="log-in-button">
+                                        <state key="selected" image="A8D65A2F-1E54-46EA-9F34-C25459433B49" backgroundImage="log-in-button">
                                             <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
                                         <state key="highlighted">
@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1256" y="286"/>
+            <point key="canvasLocation" x="-1274" y="286"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cY2-OH-rhX">
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXa-ub-yA1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739" y="310"/>
+            <point key="canvasLocation" x="807" y="280"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FPR-eb-DI5">
@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Gh-em-XgY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="310"/>
+            <point key="canvasLocation" x="1250" y="280"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eSE-WN-012">
@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pbo-YE-ifm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="935"/>
+            <point key="canvasLocation" x="42" y="989"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tVv-jn-HTM">
@@ -158,12 +158,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8m-rA-qap" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="374" y="310"/>
+            <point key="canvasLocation" x="442" y="280"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="Yyc-1N-4sl">
             <objects>
-                <viewController id="iu2-iz-6uG" customClass="ViewController" customModule="WalkPool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iu2-iz-6uG" customClass="LogInViewController" customModule="WalkPool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="neU-qV-e5n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -191,13 +191,14 @@
                                             <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <state key="selected" image="A844E4AD-DDBA-4BEF-A681-DBC4EFB07B9C" backgroundImage="log-in-button">
+                                        <state key="selected" image="B1065B3F-AB49-44BA-8FFE-5A2589662745" backgroundImage="log-in-button">
                                             <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleShadowColor" red="0.81596779340000003" green="0.81596779340000003" blue="0.81596779340000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="onClickButton:" destination="iu2-iz-6uG" eventType="touchUpInside" id="EMN-A6-hyh"/>
                                             <segue destination="cgA-Ko-aFB" kind="push" id="S99-dX-72N"/>
                                         </connections>
                                     </button>
@@ -208,30 +209,36 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="form" id="bQi-1s-dTx">
-                                        <rect key="frame" x="24" y="300" width="270" height="46"/>
+                                    <view contentMode="scaleToFill" id="nj3-Mc-5dm">
+                                        <rect key="frame" x="0.0" y="235" width="320" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="form" id="h8N-36-iOc">
-                                        <rect key="frame" x="24" y="255" width="270" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="18" clearButtonMode="whileEditing" id="WZw-vd-Ky3">
-                                        <rect key="frame" x="34" y="263" width="264" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="18" clearButtonMode="whileEditing" id="Rfu-wP-oXS">
-                                        <rect key="frame" x="34" y="308" width="264" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="form" id="bQi-1s-dTx">
+                                                <rect key="frame" x="25" y="64" width="270" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="form" id="h8N-36-iOc">
+                                                <rect key="frame" x="25" y="19" width="270" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="18" clearButtonMode="whileEditing" id="WZw-vd-Ky3">
+                                                <rect key="frame" x="28" y="27" width="264" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="18" clearButtonMode="whileEditing" id="Rfu-wP-oXS">
+                                                <rect key="frame" x="28" y="72" width="264" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                        </subviews>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
@@ -239,10 +246,14 @@
                         <color key="backgroundColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="pYZ-rz-BTL"/>
+                    <connections>
+                        <outlet property="formView" destination="nj3-Mc-5dm" id="Zlp-aN-fhC"/>
+                        <outlet property="signInBtn" destination="aO1-Xj-eqJ" id="E0e-TQ-EjM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LC-Xo-Hbh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-364" y="280"/>
+            <point key="canvasLocation" x="-386" y="280"/>
         </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="gKW-KQ-iDl">
@@ -273,7 +284,7 @@
                                             <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <state key="selected" image="4C983516-D457-45F5-A0FE-B0467256D3EF" backgroundImage="log-in-button">
+                                        <state key="selected" image="1C78B716-54AF-46D9-9AD5-FEF4DA09DCBF" backgroundImage="log-in-button">
                                             <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
                                         <state key="highlighted">
@@ -323,11 +334,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3za-AI-as9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="304"/>
+            <point key="canvasLocation" x="42" y="280"/>
         </scene>
     </scenes>
     <resources>
-        <image name="4C983516-D457-45F5-A0FE-B0467256D3EF" width="227" height="48">
+        <image name="1C78B716-54AF-46D9-9AD5-FEF4DA09DCBF" width="227" height="48">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1104,7 +1115,7 @@ ANwA3rOQs5WzoLOps7yzwLPTs96z57Pss/Sz97P8tAu0D7QWtB60K7QwtDK0NLQ5tEG0RLRJtFG0VLRm
 tGm0bgAAAAAAAAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAALRwA
 </mutableData>
         </image>
-        <image name="8A462BF5-C4A9-402B-8E6B-8CDAE5DC252F" width="227" height="48">
+        <image name="A8D65A2F-1E54-46EA-9F34-C25459433B49" width="227" height="48">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1881,7 +1892,7 @@ ANwA3rOQs5WzoLOps7yzwLPTs96z57Pss/Sz97P8tAu0D7QWtB60K7QwtDK0NLQ5tEG0RLRJtFG0VLRm
 tGm0bgAAAAAAAAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAALRwA
 </mutableData>
         </image>
-        <image name="A844E4AD-DDBA-4BEF-A681-DBC4EFB07B9C" width="227" height="48">
+        <image name="B1065B3F-AB49-44BA-8FFE-5A2589662745" width="227" height="48">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
