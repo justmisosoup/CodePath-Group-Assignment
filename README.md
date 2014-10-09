@@ -1,6 +1,6 @@
 # Walkpool
 
-**Group Contributors** Corin Nader, Sara Menefee, Jim Fell
+**Group Contributors** Corin Nader, Sara Menefee, and Jim Fell
 
 Walkpool enables users to find walking partners within a certain distance of themselves. This app was designed to promote safety of individuals walking in a big city. 
 
