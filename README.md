@@ -4,7 +4,7 @@
 
 Walkpool enables users to find walking partners within a certain distance of themselves. This app was designed to promote safety of individuals walking in a big city. 
 
-_Progress_
+**Progress**
 
 * [x] Wireframes communicating general flow created and demonstrated within the project. 
 * [x] Visual assets for app designed and "put" into Immages.xcassets.
