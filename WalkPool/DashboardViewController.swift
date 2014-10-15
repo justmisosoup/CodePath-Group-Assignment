@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class DashboardViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -17,31 +18,17 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (CLLocationManager.locationServicesEnabled())
-        {
-            locationManager = CLLocationManager()
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
+        mapView.showsUserLocation = true
+        
+        func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+            let location = locations.last as CLLocation
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            self.mapView.setRegion(region, animated: true)
         }
         
-        // 1
-        let location = CLLocationCoordinate2D(
-            latitude: 37.7816940,
-            longitude: -122.4105220
-        )
-        // 2
-        let span = MKCoordinateSpanMake(0.05, 0.05)
-        let region = MKCoordinateRegion(center: location, span: span)
-        mapView.setRegion(region, animated: true)
-        
-        //3
-        let annotation = MKPointAnnotation()
-        annotation.setCoordinate(location)
-        annotation.title = "You are here"
-        annotation.subtitle = "This is your current location"
-        mapView.addAnnotation(annotation)
+//        CLLocationManager.requestAlwaysAuthorization("Always be calling your location!")
+
     }
     
     
