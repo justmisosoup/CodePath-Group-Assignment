@@ -173,9 +173,11 @@
 				TargetAttributes = {
 					024A2D4819DCBC8A0074E7FE = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 28H2YTT2V7;
 					};
 					024A2D5D19DCBC8B0074E7FE = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 28H2YTT2V7;
 						TestTargetID = 024A2D4819DCBC8A0074E7FE;
 					};
 				};
@@ -372,6 +374,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -383,6 +387,7 @@
 				INFOPLIST_FILE = WalkPoolTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkPool.app/WalkPool";
 			};
 			name = Debug;
@@ -391,6 +396,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -398,6 +405,7 @@
 				INFOPLIST_FILE = WalkPoolTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkPool.app/WalkPool";
 			};
 			name = Release;

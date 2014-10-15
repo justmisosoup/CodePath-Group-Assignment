@@ -66,6 +66,10 @@ class LogInViewController: UIViewController, UIAlertViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onTapDismissKeyboard(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(
