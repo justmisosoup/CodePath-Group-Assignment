@@ -248,6 +248,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="EjR-wZ-i9e" appends="YES" id="PGY-Di-4Xl"/>
+                                    <outletCollection property="gestureRecognizers" destination="pdf-iP-fBS" appends="YES" id="eU6-xQ-Lfh"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -267,6 +268,11 @@
                         <action selector="onPanRevealMenu:" destination="ea5-8F-ENI" id="rCv-Ud-FTB"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="pdf-iP-fBS">
+                    <connections>
+                        <action selector="onTapDismissKeyboard:" destination="ea5-8F-ENI" id="dR0-Wc-baD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="34" y="280"/>
         </scene>
@@ -313,9 +319,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="HLQ-Aj-3es" appends="YES" id="Tb4-oQ-1jo"/>
-                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f44-6V-ZDy">
                                 <rect key="frame" x="0.0" y="26" width="37" height="43"/>
@@ -343,11 +346,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3za-AI-as9" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="HLQ-Aj-3es">
-                    <connections>
-                        <action selector="onTapDismiss:" destination="cgA-Ko-aFB" id="FS8-Yn-SAL"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-161" y="948"/>
         </scene>

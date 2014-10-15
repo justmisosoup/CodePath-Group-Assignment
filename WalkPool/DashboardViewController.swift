@@ -31,10 +31,11 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
 
     }
     
-    
-    @IBAction func onTapDismiss(sender: UITapGestureRecognizer) {
+
+    @IBAction func onTapDismissKeyboard(sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+  
 
     @IBAction func onTapDismiss(sender: AnyObject) {
         navigationController?.popToRootViewControllerAnimated(true)
