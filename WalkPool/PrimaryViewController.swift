@@ -60,7 +60,7 @@ class PrimaryViewController: UIViewController {
             println("Ended")
             if velocity.x > -40 {
                 UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
-                    self.dashboardContainerView.center.x = 440
+                    self.dashboardContainerView.center.x = 420
                     self.menuContainerView.transform = CGAffineTransformMakeScale(1, 1)
                     }, completion: { (finished: Bool) -> Void in
                 })
