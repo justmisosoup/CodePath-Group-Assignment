@@ -8,12 +8,15 @@
 
 import UIKit
 
-class LogInViewController: UIViewController, UIAlertViewDelegate {
+class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var subContent: UITextView!
+    @IBOutlet weak var logoImg: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var formView: UIView!
+    @IBOutlet weak var buttonView: UIView!
     
     // Prompt UIAlertView when signInBtn is tapped
     
@@ -21,6 +24,12 @@ class LogInViewController: UIViewController, UIAlertViewDelegate {
         super.viewDidLoad()
         
         formView.alpha = 1
+        subContent.alpha = 1
+        logoImg.alpha = 1
+        
+        emailTextField.delegate = self
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
 
         // Do any additional setup after loading the view.
     }
@@ -61,6 +70,54 @@ class LogInViewController: UIViewController, UIAlertViewDelegate {
 
         
         }
+    
+    
+    func keyboardWillShow(notification: NSNotification!) {
+        
+                self.formView.tag = Int(self.formView.frame.origin.y)
+                self.buttonView.tag = Int(self.buttonView.frame.origin.y)
+        
+        var userInfo = notification.userInfo!
+        
+        // Get the keyboard height and width from the notification
+        // Size varies depending on OS, language, orientation
+        var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+        var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
+        var animationDuration = durationValue.doubleValue
+        var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+        var animationCurve = curveValue.integerValue
+        
+        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
+                        self.subContent.alpha = 0
+                        self.logoImg.alpha = 0
+                        self.formView.frame.origin.y = -100;
+                        self.buttonView.frame.origin.y = 190;
+            
+            
+            }, completion: nil)
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification!) {
+        var userInfo = notification.userInfo!
+        
+        // Get the keyboard height and width from the notification
+        // Size varies depending on OS, language, orientation
+        var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+        var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
+        var animationDuration = durationValue.doubleValue
+        var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+        var animationCurve = curveValue.integerValue
+        
+        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
+                        self.subContent.alpha = 1
+                        self.logoImg.alpha = 1
+                        self.formView.frame.origin.y = CGFloat(self.formView.tag);
+                        self.buttonView.frame.origin.y = CGFloat(self.buttonView.tag);
+            
+            }, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

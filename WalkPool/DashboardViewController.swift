@@ -18,7 +18,20 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapView.showsUserLocation = true
+        let location = CLLocationCoordinate2D(
+            latitude: 37.7816542,
+            longitude: -122.4078745
+        )
+
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let region = MKCoordinateRegion(center: location, span: span)
+        mapView.setRegion(region, animated: true)
+        
+        let annotation = MKPointAnnotation()
+        annotation.setCoordinate(location)
+        annotation.title = "Big Ben"
+        annotation.subtitle = "London"
+        mapView.addAnnotation(annotation)
         
         func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
             let location = locations.last as CLLocation
