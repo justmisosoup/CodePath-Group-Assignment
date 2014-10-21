@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var destinationPoint: UITextField!
     @IBOutlet weak var startingPoint: UITextField!
@@ -20,11 +20,19 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
     var showsUserLocation : Bool!
     var userLocationVisibile : Bool!
     
+    let blue = UIColor(red: 90/255, green: 181/255, blue: 211/255, alpha: 1)
+    let gray = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        destinationPoint.delegate = self
+        startingPoint.delegate = self
+        
         startingPoint.text = "Current Location"
-        startingPoint.textColor = UIColor.blueColor()
+        startingPoint.textColor = blue
+        
+        destinationPoint.textColor = gray
         
         showsUserLocation = true
         userLocationVisibile = true
@@ -65,28 +73,47 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
         var alertView = UIAlertView(title: "Searching...", message: nil, delegate: self, cancelButtonTitle: nil)
         alertView.show()
         
-        delay(2, closure: { () -> () in
+        delay(1, closure: { () -> () in
             
-            // Credentials were correct UIAlertView!
+            // Locations are Correct!
             
-            if(self.startingPoint.text == "1019 Market Street" ) && (self.destinationPoint.text == "989 Market Street") {
+            if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text == "989 Market Street") {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 
             }
                 
-                // Credentials were empty UIAlertView!
+                // Destination is Empty!
                 
-            else if(self.startingPoint.text.isEmpty ) && (self.destinationPoint.text.isEmpty) {
+            else if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text.isEmpty) {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
-                UIAlertView(title: "Whoops!", message: "You need to enter a valid location", delegate: nil, cancelButtonTitle: "Try Again...").show()
+                UIAlertView(title: "Whoops!", message: "In order to find walking partners, you need to indicate a destination.", delegate: nil, cancelButtonTitle: "Try Again...").show()
                 
+            }
+                
+                // Destination is Empty!
+                
+            else if(self.startingPoint.text.isEmpty ) && (self.destinationPoint.text == "989 Market Street") {
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                UIAlertView(title: "Yikes!", message: "Looks like we lost you, you need to tell us where you are.", delegate: nil, cancelButtonTitle: "Try Again...").show()
+                
+            }
+                
+             // Locations are Wrong!
+                
+            else {
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                UIAlertView(title: "Yikes!", message: "Where do you think you are? Your destination does not exist!", delegate: nil, cancelButtonTitle: "Try Again...").show()
             }
             
         })
 
     }
     
-    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        destinationPoint.resignFirstResponder()
+        startingPoint.resignFirstResponder()
+        return true
+    }
     
 
     @IBAction func onTapDismiss(sender: AnyObject) {
