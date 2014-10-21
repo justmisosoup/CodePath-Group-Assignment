@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ea5-8F-ENI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ea5-8F-ENI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -108,13 +108,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Czh-Of-Y20">
-                                                <rect key="frame" x="8" y="8" width="17" height="30"/>
+                                                <rect key="frame" x="10" y="12" width="14" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="chevron">
+                                                <state key="normal" image="close">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="onBackButton:" destination="Avj-pC-wYk" eventType="touchUpInside" id="DgX-zb-0gl"/>
+                                                    <action selector="onCloseButton:" destination="Avj-pC-wYk" eventType="touchUpInside" id="6CO-Vm-5Jb"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -414,10 +414,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="YDD-EB-BN8">
-                                        <rect key="frame" x="0.0" y="90" width="320" height="316"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </mapView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5tS-F1-3O4">
                                         <rect key="frame" x="25" y="428" width="270" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -443,10 +439,27 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" id="xSS-JH-oSp">
-                                        <rect key="frame" x="145" y="214" width="12" height="17"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-current-location" id="5Qf-sS-JNS">
+                                        <rect key="frame" x="-2" y="88" width="325" height="318"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OFI-Mb-yQQ">
+                                        <rect key="frame" x="103" y="224" width="57" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="pin-emily">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="7xl-H1-FBh" kind="modal" id="bvF-Ks-tfb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mgb-AP-AeJ">
+                                        <rect key="frame" x="158" y="102" width="57" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="pin-james">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </scrollView>
@@ -476,25 +489,72 @@
                     <connections>
                         <outlet property="destinationPoint" destination="uCo-VT-J3a" id="SwB-EV-lOb"/>
                         <outlet property="findButton" destination="5tS-F1-3O4" id="S0u-ia-iuE"/>
-                        <outlet property="mapView" destination="YDD-EB-BN8" id="9So-HC-Efu"/>
+                        <outlet property="mapImage" destination="5Qf-sS-JNS" id="g5V-yI-F2T"/>
+                        <outlet property="pinEmilyImage" destination="OFI-Mb-yQQ" id="tsF-BN-iaz"/>
+                        <outlet property="pinJamesImage" destination="mgb-AP-AeJ" id="trK-5c-w05"/>
                         <outlet property="startingPoint" destination="zL9-iV-1Z4" id="4e8-Vz-mDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3za-AI-as9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="427" y="280"/>
+            <point key="canvasLocation" x="393" y="276"/>
+        </scene>
+        <!--Match Detail View Controller-->
+        <scene sceneID="0Sa-gM-d5m">
+            <objects>
+                <viewController id="7xl-H1-FBh" customClass="MatchDetailViewController" customModule="WalkPool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5oY-8o-mfT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" id="piv-eA-fht">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emily" id="ebl-xO-0Xh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n2z-cM-X1r">
+                                <rect key="frame" x="12" y="37" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCloseButton:" destination="7xl-H1-FBh" eventType="touchUpInside" id="utf-OQ-9F8"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-401-stevenson" id="Ge7-Zb-bDB">
+                                <rect key="frame" x="0.0" y="229" width="320" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wkF-4o-wdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856" y="272"/>
         </scene>
     </scenes>
     <resources>
         <image name="avatar" width="36" height="36"/>
         <image name="buttonactive" width="270" height="48"/>
         <image name="chevron" width="13" height="22"/>
+        <image name="close" width="14" height="14"/>
+        <image name="emily" width="200" height="150"/>
         <image name="header" width="320" height="70"/>
         <image name="loginform" width="270" height="91"/>
         <image name="logo" width="165" height="39"/>
+        <image name="map-401-stevenson" width="1437" height="814"/>
+        <image name="map-current-location" width="501" height="498"/>
         <image name="matches" width="320" height="568"/>
         <image name="menu" width="20" height="15"/>
         <image name="pin" width="12" height="17"/>
+        <image name="pin-emily" width="57" height="61"/>
+        <image name="pin-james" width="57" height="61"/>
         <image name="profile" width="320" height="568"/>
         <image name="profile-photo" width="570" height="360"/>
     </resources>

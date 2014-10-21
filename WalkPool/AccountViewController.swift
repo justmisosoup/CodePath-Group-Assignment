@@ -38,7 +38,7 @@ class AccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onBackButton(sender: UIButton) {
+    @IBAction func onCloseButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     

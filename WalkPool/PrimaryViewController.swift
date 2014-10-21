@@ -17,6 +17,7 @@ class PrimaryViewController: UIViewController {
     var menuViewController: UIViewController!
     var dashboardViewController: UIViewController!
     var accountViewController:UIViewController!
+    var matchDetailViewController:UIViewController!
     var imageCenter: CGPoint!
     
     override func viewDidLoad() {
@@ -27,6 +28,8 @@ class PrimaryViewController: UIViewController {
         dashboardViewController = storyboard.instantiateViewControllerWithIdentifier("DashboardViewController") as UIViewController
         menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as UIViewController
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
+//        matchDetailViewController = storyboard.instantiateViewControllerWithIdentifier("MatchDetailViewController") as UIViewController
+        
 
                 
         menuContainerView.addSubview(menuViewController.view)
@@ -85,6 +88,7 @@ class PrimaryViewController: UIViewController {
     
     @IBAction func onTapDismissKeyboard(sender: AnyObject) {
         view.endEditing(true)
+        println("tap keyboard")
     }
     func convertValue(value: CGFloat, r1Min: CGFloat, r1Max: CGFloat, r2Min: CGFloat, r2Max: CGFloat) -> CGFloat {
         var ratio = (r2Max - r2Min) / (r1Max - r1Min)
