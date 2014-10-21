@@ -10,28 +10,35 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class DashboardViewController: UIViewController, CLLocationManagerDelegate {
+class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
+    @IBOutlet weak var findButton: UIButton!
     @IBOutlet var mapView: MKMapView!
     var locationManager: CLLocationManager!
+    var showsUserLocation : Bool!
+    var userLocationVisibile : Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let location = CLLocationCoordinate2D(
+        showsUserLocation = true
+        userLocationVisibile = true
+        // Location 1
+        
+        let location1 = CLLocationCoordinate2D(
             latitude: 37.7816542,
             longitude: -122.4078745
         )
 
-        let span = MKCoordinateSpanMake(0.05, 0.05)
-        let region = MKCoordinateRegion(center: location, span: span)
-        mapView.setRegion(region, animated: true)
+        let span1 = MKCoordinateSpanMake(0.05, 0.05)
+        let region1 = MKCoordinateRegion(center: location1, span: span1)
+        mapView.setRegion(region1, animated: true)
         
-        let annotation = MKPointAnnotation()
-        annotation.setCoordinate(location)
-        annotation.title = "Big Ben"
-        annotation.subtitle = "London"
-        mapView.addAnnotation(annotation)
+        let annotation1 = MKPointAnnotation()
+        annotation1.setCoordinate(location1)
+        annotation1.title = "IndieGoGo"
+        annotation1.subtitle = "CodePath"
+        mapView.addAnnotation(annotation1)
         
         func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
             let location = locations.last as CLLocation
@@ -50,6 +57,32 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     }
   
     @IBAction func onFind(sender: AnyObject) {
+        
+        let location2 = CLLocationCoordinate2D(
+            latitude: 37.7823944,
+            longitude: -122.4098401
+        )
+        
+        let span2 = MKCoordinateSpanMake(0.05, 0.05)
+        let region2 = MKCoordinateRegion(center: location2, span: span2)
+        mapView.setRegion(region2, animated: true)
+        
+        let annotation2 = MKPointAnnotation()
+        annotation2.setCoordinate(location2)
+        annotation2.title = "Zendesk"
+        annotation2.subtitle = "Corin"
+        
+        if findButton.tag == 0 {
+            //Add Annotation
+            println("Add Annotation")
+            findButton.tag = 1
+            mapView.addAnnotation(annotation2)
+        } else if findButton.tag == 1 {
+            //Remove Annotation
+            println("Remove Annotation")
+            findButton.tag = 0
+            mapView.removeAnnotation(annotation2)
+        }
         
         
     }

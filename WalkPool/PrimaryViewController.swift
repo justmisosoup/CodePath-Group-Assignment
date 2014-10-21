@@ -12,6 +12,7 @@ class PrimaryViewController: UIViewController {
 
     @IBOutlet weak var dashboardContainerView: UIView!
     @IBOutlet weak var menuContainerView: UIView!
+    @IBOutlet weak var menuButton: UIButton!
     
     var menuViewController: UIViewController!
     var dashboardViewController: UIViewController!
@@ -56,9 +57,6 @@ class PrimaryViewController: UIViewController {
             println("Changed \(location.x)")
             dashboardContainerView.center.x = translation.x + imageCenter.x
             
-            if location.x < 250 {
-            }
-            
         } else if gestureRecognizer.state == UIGestureRecognizerState.Ended {
             println("Ended")
             if velocity.x > -40 {
@@ -78,10 +76,12 @@ class PrimaryViewController: UIViewController {
 
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     @IBAction func onTapDismissKeyboard(sender: AnyObject) {
         view.endEditing(true)
