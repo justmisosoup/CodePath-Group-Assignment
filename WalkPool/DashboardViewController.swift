@@ -75,34 +75,51 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
         
         delay(1, closure: { () -> () in
             
-            // Locations are Correct!
+            // Locations are Correct! Will return images.
             
             if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text == "989 Market Street") {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 
+                // Return image with complete route.
+                // Drop buddy locations.
+                
             }
                 
-                // Destination is Empty!
+                // Destination is Empty! Will return images.
                 
             else if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text.isEmpty) {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 UIAlertView(title: "Whoops!", message: "In order to find walking partners, you need to indicate a destination.", delegate: nil, cancelButtonTitle: "Try Again...").show()
                 
+                // Return image with current location but no destination.
+                // No buddy icons.
+                // No destination point.
+                // Technically won't change from originating image.
+                
             }
                 
-                // Destination is Empty!
+                // Destination is Empty! Will not return results.
                 
             else if(self.startingPoint.text.isEmpty ) && (self.destinationPoint.text == "989 Market Street") {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
-                UIAlertView(title: "Yikes!", message: "Looks like we lost you, you need to tell us where you are.", delegate: nil, cancelButtonTitle: "Try Again...").show()
+                self.startingPoint.text = "Current Location"
+                
+                // Return image with complete route.
+                // Drop buddy locations.
                 
             }
                 
-             // Locations are Wrong!
+             // Locations are Wrong! Will not return results.
                 
             else {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 UIAlertView(title: "Yikes!", message: "Where do you think you are? Your destination does not exist!", delegate: nil, cancelButtonTitle: "Try Again...").show()
+                
+                // Return image with current location but no destination.
+                // No buddy icons.
+                // No destination point.
+                // Technically won't change from originating image.
+                
             }
             
         })
