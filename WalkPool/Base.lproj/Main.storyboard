@@ -430,6 +430,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" id="xSS-JH-oSp">
+                                        <rect key="frame" x="145" y="214" width="12" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </scrollView>
@@ -457,8 +461,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="t9V-Ha-Pqi"/>
                     <connections>
+                        <outlet property="destinationPoint" destination="uCo-VT-J3a" id="SwB-EV-lOb"/>
                         <outlet property="findButton" destination="5tS-F1-3O4" id="S0u-ia-iuE"/>
                         <outlet property="mapView" destination="YDD-EB-BN8" id="9So-HC-Efu"/>
+                        <outlet property="startingPoint" destination="zL9-iV-1Z4" id="4e8-Vz-mDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3za-AI-as9" sceneMemberID="firstResponder"/>

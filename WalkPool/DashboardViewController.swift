@@ -12,6 +12,8 @@ import CoreLocation
 
 class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
+    @IBOutlet weak var destinationPoint: UITextField!
+    @IBOutlet weak var startingPoint: UITextField!
     @IBOutlet weak var findButton: UIButton!
     @IBOutlet var mapView: MKMapView!
     var locationManager: CLLocationManager!
@@ -20,6 +22,9 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startingPoint.text = "Current Location"
+        startingPoint.textColor = UIColor.blueColor()
         
         showsUserLocation = true
         userLocationVisibile = true
@@ -57,35 +62,32 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
     }
   
     @IBAction func onFind(sender: AnyObject) {
+        var alertView = UIAlertView(title: "Searching...", message: nil, delegate: self, cancelButtonTitle: nil)
+        alertView.show()
         
-        let location2 = CLLocationCoordinate2D(
-            latitude: 37.7823944,
-            longitude: -122.4098401
-        )
-        
-        let span2 = MKCoordinateSpanMake(0.05, 0.05)
-        let region2 = MKCoordinateRegion(center: location2, span: span2)
-        mapView.setRegion(region2, animated: true)
-        
-        let annotation2 = MKPointAnnotation()
-        annotation2.setCoordinate(location2)
-        annotation2.title = "Zendesk"
-        annotation2.subtitle = "Corin"
-        
-        if findButton.tag == 0 {
-            //Add Annotation
-            println("Add Annotation")
-            findButton.tag = 1
-            mapView.addAnnotation(annotation2)
-        } else if findButton.tag == 1 {
-            //Remove Annotation
-            println("Remove Annotation")
-            findButton.tag = 0
-            mapView.removeAnnotation(annotation2)
-        }
-        
-        
+        delay(2, closure: { () -> () in
+            
+            // Credentials were correct UIAlertView!
+            
+            if(self.startingPoint.text == "1019 Market Street" ) && (self.destinationPoint.text == "989 Market Street") {
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                
+            }
+                
+                // Credentials were empty UIAlertView!
+                
+            else if(self.startingPoint.text.isEmpty ) && (self.destinationPoint.text.isEmpty) {
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                UIAlertView(title: "Whoops!", message: "You need to enter a valid location", delegate: nil, cancelButtonTitle: "Try Again...").show()
+                
+            }
+            
+        })
+
     }
+    
+    
+    
 
     @IBAction func onTapDismiss(sender: AnyObject) {
         navigationController?.popToRootViewControllerAnimated(true)
@@ -94,6 +96,15 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
 
 }
