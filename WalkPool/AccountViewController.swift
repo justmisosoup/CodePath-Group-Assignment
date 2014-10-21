@@ -15,6 +15,7 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var buddyScore: UILabel!
     @IBOutlet weak var aboutMeDescription: UITextView!
+    @IBOutlet weak var buddyRating: UILabel!
     
     var isPresenting: Bool = true
     
@@ -27,6 +28,7 @@ class AccountViewController: UIViewController {
         aboutMe.textColor = blue
         nameText.textColor = gray
         buddyScore.textColor = blue
+        buddyRating.textColor = gray
 
         scrollView.contentSize = containerView.frame.size
     }

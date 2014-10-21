@@ -100,6 +100,13 @@
                                                 <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98% Positive" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5hl-EC-xNf">
+                                                <rect key="frame" x="29" y="508" width="178" height="23"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Czh-Of-Y20">
                                                 <rect key="frame" x="8" y="8" width="17" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -124,6 +131,7 @@
                     <connections>
                         <outlet property="aboutMe" destination="zgt-Ba-qzM" id="DWs-WH-0VG"/>
                         <outlet property="aboutMeDescription" destination="TIz-Lt-Af1" id="ymk-Wp-dEb"/>
+                        <outlet property="buddyRating" destination="5hl-EC-xNf" id="dg9-37-Vg6"/>
                         <outlet property="buddyScore" destination="6Xg-FY-izt" id="AqT-SU-QP8"/>
                         <outlet property="containerView" destination="3gS-4A-tuy" id="gns-N2-u68"/>
                         <outlet property="nameText" destination="99b-MX-XPq" id="jRK-k7-RLw"/>
