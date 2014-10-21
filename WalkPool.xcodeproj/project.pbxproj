@@ -17,6 +17,9 @@
 		02570E1619EE1C850008C36B /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02570E1519EE1C850008C36B /* PrimaryViewController.swift */; };
 		0272F3E819E60BAC0016B2B9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272F3E719E60BAC0016B2B9 /* LogInViewController.swift */; };
 		02DC70C419E37BE400DDE103 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC70C319E37BE400DDE103 /* DashboardViewController.swift */; };
+		4094FB0C19F47466009DFC6C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4094FB0B19F47466009DFC6C /* CoreLocation.framework */; };
+		4094FB0E19F4756F009DFC6C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4094FB0D19F4756F009DFC6C /* MapKit.framework */; };
+		4094FB1019F47B13009DFC6C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4094FB0F19F47B13009DFC6C /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		02570E1519EE1C850008C36B /* PrimaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
 		0272F3E719E60BAC0016B2B9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		02DC70C319E37BE400DDE103 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		4094FB0B19F47466009DFC6C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4094FB0D19F4756F009DFC6C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4094FB0F19F47B13009DFC6C /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4094FB0E19F4756F009DFC6C /* MapKit.framework in Frameworks */,
+				4094FB0C19F47466009DFC6C /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +75,8 @@
 		024A2D4019DCBC8A0074E7FE = {
 			isa = PBXGroup;
 			children = (
+				4094FB0D19F4756F009DFC6C /* MapKit.framework */,
+				4094FB0B19F47466009DFC6C /* CoreLocation.framework */,
 				024A2D4B19DCBC8B0074E7FE /* WalkPool */,
 				024A2D6119DCBC8B0074E7FE /* WalkPoolTests */,
 				024A2D4A19DCBC8B0074E7FE /* Products */,
@@ -88,6 +98,7 @@
 				024A2D4E19DCBC8B0074E7FE /* AppDelegate.swift */,
 				024A2D5019DCBC8B0074E7FE /* ViewController.swift */,
 				024A2D5219DCBC8B0074E7FE /* Main.storyboard */,
+				4094FB0F19F47B13009DFC6C /* AccountViewController.swift */,
 				02570E1519EE1C850008C36B /* PrimaryViewController.swift */,
 				02570E1319EE17690008C36B /* MenuViewController.swift */,
 				0272F3E719E60BAC0016B2B9 /* LogInViewController.swift */,
@@ -228,6 +239,7 @@
 			files = (
 				0272F3E819E60BAC0016B2B9 /* LogInViewController.swift in Sources */,
 				02570E1619EE1C850008C36B /* PrimaryViewController.swift in Sources */,
+				4094FB1019F47B13009DFC6C /* AccountViewController.swift in Sources */,
 				02570E1419EE17690008C36B /* MenuViewController.swift in Sources */,
 				024A2D5119DCBC8B0074E7FE /* ViewController.swift in Sources */,
 				02DC70C419E37BE400DDE103 /* DashboardViewController.swift in Sources */,

@@ -15,6 +15,7 @@ class PrimaryViewController: UIViewController {
     
     var menuViewController: UIViewController!
     var dashboardViewController: UIViewController!
+    var accountViewController:UIViewController!
     var imageCenter: CGPoint!
     
     override func viewDidLoad() {
@@ -24,7 +25,9 @@ class PrimaryViewController: UIViewController {
         
         dashboardViewController = storyboard.instantiateViewControllerWithIdentifier("DashboardViewController") as UIViewController
         menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as UIViewController
-        
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
+
+                
         menuContainerView.addSubview(menuViewController.view)
         dashboardContainerView.addSubview(dashboardViewController.view)
         
@@ -87,4 +90,6 @@ class PrimaryViewController: UIViewController {
         var ratio = (r2Max - r2Min) / (r1Max - r1Min)
         return value * ratio + r2Min - r1Min * ratio
     }
+    
+    
 }

@@ -1,25 +1,23 @@
 //
-//  MenuViewController.swift
+//  AccountViewController.swift
 //  WalkPool
 //
-//  Created by Sara Menefee on 10/14/14.
+//  Created by Corin Nader on 10/19/14.
 //  Copyright (c) 2014 Sara Menefee. All rights reserved.
 //
 
 import UIKit
 
-class MenuViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class AccountViewController: UIViewController {
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var containerView: UIView!
     
-    var accountViewController:UIViewController!
-   
+    var isPresenting: Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
-
+        scrollView.contentSize = containerView.frame.size
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +25,11 @@ class MenuViewController: UIViewController, UIViewControllerTransitioningDelegat
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onProfileButton(sender: UIButton) {
-        performSegueWithIdentifier("AccountSegue", sender: self)
-         }
+    @IBAction func onBackButton(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
 
     /*
     // MARK: - Navigation

@@ -49,6 +49,10 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
         view.endEditing(true)
     }
   
+    @IBAction func onFind(sender: AnyObject) {
+        
+        
+    }
 
     @IBAction func onTapDismiss(sender: AnyObject) {
         navigationController?.popToRootViewControllerAnimated(true)
