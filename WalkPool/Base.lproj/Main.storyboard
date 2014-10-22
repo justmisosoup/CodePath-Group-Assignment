@@ -20,26 +20,6 @@
             </objects>
             <point key="canvasLocation" x="-920" y="272"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="cY2-OH-rhX">
-            <objects>
-                <viewController id="BeQ-UJ-fyl" customClass="ViewController" customModule="WalkPool" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Not-it-peg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matches" id="UUh-kM-aVs">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vXa-ub-yA1" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1361" y="-400"/>
-        </scene>
         <!--Account View Controller-->
         <scene sceneID="CHo-GO-0At">
             <objects>
@@ -141,26 +121,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49B-f3-aa7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33" y="1028"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="FPR-eb-DI5">
-            <objects>
-                <viewController id="rFg-xK-Cr6" customClass="ViewController" customModule="WalkPool" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iEC-J3-hNQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" id="qmv-Mk-H6t">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Gh-em-XgY" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1361" y="232"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="eSE-WN-012">
@@ -450,7 +410,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="7xl-H1-FBh" kind="modal" id="bvF-Ks-tfb"/>
+                                            <segue destination="7xl-H1-FBh" kind="modal" id="ED6-hZ-Ih7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mgb-AP-AeJ">
@@ -499,10 +459,10 @@
             </objects>
             <point key="canvasLocation" x="393" y="276"/>
         </scene>
-        <!--Match Detail View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="0Sa-gM-d5m">
             <objects>
-                <viewController id="7xl-H1-FBh" customClass="MatchDetailViewController" customModule="WalkPool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7xl-H1-FBh" customClass="ProfileViewController" customModule="WalkPool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5oY-8o-mfT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -523,20 +483,35 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onCloseButton:" destination="7xl-H1-FBh" eventType="touchUpInside" id="utf-OQ-9F8"/>
+                                    <action selector="onCloseButton:" destination="7xl-H1-FBh" eventType="touchUpInside" id="hIB-FN-Dnm"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-401-stevenson" id="Ge7-Zb-bDB">
                                 <rect key="frame" x="0.0" y="229" width="320" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yfs-0D-6EV">
+                                <rect key="frame" x="25" y="495" width="270" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Meet up with Emily" backgroundImage="buttonactive">
+                                    <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFind:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="kqT-d2-2ci"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="closeButton" destination="n2z-cM-X1r" id="Npl-E9-QpE"/>
+                        <outlet property="onCloseButton" destination="n2z-cM-X1r" id="wli-dr-Gyj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkF-4o-wdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="272"/>
+            <point key="canvasLocation" x="843" y="276"/>
         </scene>
     </scenes>
     <resources>
@@ -550,12 +525,10 @@
         <image name="logo" width="165" height="39"/>
         <image name="map-401-stevenson" width="1437" height="814"/>
         <image name="map-current-location" width="501" height="498"/>
-        <image name="matches" width="320" height="568"/>
         <image name="menu" width="20" height="15"/>
         <image name="pin" width="12" height="17"/>
         <image name="pin-emily" width="57" height="61"/>
         <image name="pin-james" width="57" height="61"/>
-        <image name="profile" width="320" height="568"/>
         <image name="profile-photo" width="570" height="360"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
