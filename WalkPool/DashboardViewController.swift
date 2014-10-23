@@ -74,7 +74,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
                 // Return image with complete route.
                 // Drop buddy pins.
                 self.destintationMapMatches()
-                self.findButton.enabled = false
+//                self.findButton.enabled = false
 
                 
              }

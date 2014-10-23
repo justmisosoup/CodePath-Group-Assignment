@@ -24,6 +24,7 @@ class MeetingPointViewController: UIViewController {
     @IBOutlet weak var directions1: UILabel!
     @IBOutlet weak var greyChevron: UIButton!
     @IBOutlet weak var mapImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         confirmButton.hidden = true
@@ -41,20 +42,19 @@ class MeetingPointViewController: UIViewController {
         magicFog.hidden = false
         waitingForApproval.hidden = false
         
-        delay(8) {
-            self.activityIndicator.stopAnimating()
-            
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
-                self.waitingForApproval.hidden = true
+        delay(5) {
+            UIView.animateWithDuration(0.8, animations: { () -> Void in
+                self.activityIndicator.stopAnimating()
                 self.approvedConfirmation.hidden = false
+                self.waitingForApproval.hidden = true
                 self.activityIndicator.hidden = true
             })
             
         }
         
-        delay(3) {
+        delay(7) {
             
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.magicFog.alpha = 0
             })
             
