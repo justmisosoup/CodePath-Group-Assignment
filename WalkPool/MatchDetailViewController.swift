@@ -11,9 +11,11 @@ import UIKit
 class MatchDetailViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
     
+    @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var buddyScrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        buddyScrollView.contentSize = CGSize(width: 320, height: 490)
         // Do any additional setup after loading the view.
         
     }
