@@ -42,12 +42,21 @@ class MeetingPointViewController: UIViewController {
         navigationArrivedMap()
         directions1.hidden = true
         greyChevron.hidden = true
-        rendezvousMessage.hidden = true
+        rendezvousMessage.hidden = false
+        loadingImg.hidden = false
+
+        var images = UIImage.animatedImageNamed("loading-", duration: 1)
+        loadingImg.image = images
         
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.confirmButton.hidden = false
-            self.arrivedMessage.hidden = false
-        })
+        delay(4) {
+            self.emilyArrived()
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.rendezvousMessage.hidden = true
+                self.loadingImg.hidden = true
+                self.confirmButton.hidden = false
+                self.arrivedMessage.hidden = false
+            })
+        }
         
     }
     
@@ -64,7 +73,7 @@ class MeetingPointViewController: UIViewController {
         var images = UIImage.animatedImageNamed("loading-", duration: 1)
         loadingImg.image = images
         
-        delay(4) {
+        delay(8) {
             self.emilyArrived()
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.loadingImg.hidden = true
