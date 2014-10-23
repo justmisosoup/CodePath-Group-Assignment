@@ -10,19 +10,26 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate {
+class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
 
     @IBOutlet weak var destinationPoint: UITextField!
     @IBOutlet weak var startingPoint: UITextField!
     @IBOutlet weak var findButton: UIButton!
-    @IBOutlet var mapView: MKMapView!
-    @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var pinJamesImage: UIButton!
-    @IBOutlet weak var pinEmilyImage: UIButton!
+    @IBOutlet weak var pinEmilyButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mapImage: UIImageView!
+    @IBOutlet weak var dashboardView: UIView!
+    @IBOutlet weak var meetingPointButton: UIButton!
+    //@IBOutlet var mapView: MKMapView!
+
     
-    var locationManager: CLLocationManager!
-    var showsUserLocation : Bool!
-    var userLocationVisibile : Bool!
+//    var locationManager: CLLocationManager!
+//    var showsUserLocation : Bool!
+//    var userLocationVisibile : Bool!
+    var matchDetailViewController: UIViewController!
+    var isPresenting: Bool = true
     
     let blue = UIColor(red: 90/255, green: 181/255, blue: 211/255, alpha: 1)
     let gray = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
@@ -37,38 +44,15 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
         startingPoint.textColor = blue
         
         destinationPoint.textColor = gray
-        pinJamesImage.frame.origin.y = CGFloat(-200)
-        pinEmilyImage.frame.origin.y = CGFloat(-1800)
         
-//        showsUserLocation = true
-//        userLocationVisibile = true
+        currentLocationMap()
         
-        // Location 1
+        containerView.hidden = true
+        meetingPointButton.hidden = true
         
-//        let location1 = CLLocationCoordinate2D(
-//            latitude: 37.7816542,
-//            longitude: -122.4078745
-//        )
-//
-//        let span1 = MKCoordinateSpanMake(0.05, 0.05)
-//        let region1 = MKCoordinateRegion(center: location1, span: span1)
-//        mapView.setRegion(region1, animated: true)
-//        
-//        let annotation1 = MKPointAnnotation()
-//        annotation1.setCoordinate(location1)
-//        annotation1.title = "IndieGoGo"
-//        annotation1.subtitle = "CodePath"
-//        mapView.addAnnotation(annotation1)
-//        
-//        func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-//            let location = locations.last as CLLocation
-//            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-//            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-//            self.mapView.setRegion(region, animated: true)
-//        }
-        
-//        CLLocationManager.requestAlwaysAuthorization("Always be calling your location!")
-
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        matchDetailViewController = storyboard.instantiateViewControllerWithIdentifier("MatchDetailViewController") as UIViewController
+    
     }
     
 
@@ -83,25 +67,22 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
         delay(1, closure: { () -> () in
             
             // Locations are Correct! Will return images.
-            
             if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text == "989 Market Street") {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 
                 // Return image with complete route.
-                // Drop buddy locations.
+                // Drop buddy pins.
                 self.destintationMapMatches()
                 
-                
-                            }
+             }
                 
             // Destination is Empty! Will return images.
-                
             else if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text.isEmpty) {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 UIAlertView(title: "Whoops!", message: "In order to find walking buddies, you need to indicate a destination.", delegate: nil, cancelButtonTitle: "Try Again...").show()
                 
                 // Return image with current location but no destination.
-                // No buddy icons.
+                // No buddy pins.
                 // No destination point.
                 // Technically won't change from originating image.
                 self.currentLocationMap()
@@ -109,25 +90,23 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
             }
                 
             // Destination is Empty! Will not return results.
-                
             else if(self.startingPoint.text.isEmpty ) && (self.destinationPoint.text == "989 Market Street") {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 self.startingPoint.text = "Current Location"
                 
                 // Return image with complete route.
-                // Drop buddy locations.
+                // Drop buddy pins.
                 self.destintationMapMatches()
                 
             }
                 
              // Locations are Wrong! Will not return results.
-                
             else {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 UIAlertView(title: "Yikes!", message: "Where do you think you are? Your destination does not exist!", delegate: nil, cancelButtonTitle: "Try Again...").show()
                 
                 // Return image with current location but no destination.
-                // No buddy icons.
+                // No buddy pins.
                 // No destination point.
                 // Technically won't change from originating image.
                 self.currentLocationMap()
@@ -138,34 +117,100 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
 
     }
     
+    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = true
+        self.destintationMapMatches()
+        return self
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = false
+        return self
+    }
+    
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+        // The value here should be the duration of the animations scheduled in the animationTransition method
+        return 0.4
+    }
+    
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        // TODO: animate the transition in Step 3 below
+        println("animating transition")
+        var containerView = transitionContext.containerView()
+        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        
+        
+        if (isPresenting) {
+            // Intro segue
+            println("intro segue")
+            containerView.addSubview(toViewController.view)
+            toViewController.view.alpha = 0
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                toViewController.view.alpha = 1
+                }) { (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+            }
+        } else {
+            // Outro segue
+            println("outro segue")
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                fromViewController.view.alpha = 0
+                }) { (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+                    fromViewController.view.removeFromSuperview()
+                    
+                    self.startingPoint.text = "Current Location"
+                    self.destinationPoint.text = "984 Mission Street"
+                    self.mapImage.image = UIImage(named: "map-halfway-point.png")
+                    self.pinJamesImage.frame.origin.y = CGFloat(-200)
+                    self.pinEmilyButton.frame.origin = CGPoint(x: 50 , y: 307)
+                    self.findButton.hidden = true
+                    self.meetingPointButton.hidden = false
+                    
+                    
+                    
+            }
+        }
+    }
+
+    // Buddy Icon Tap Selection
+    
+    @IBAction func onPinButton(sender: UIButton) {
+        performSegueWithIdentifier("matchDetailSegue", sender: self)
+    }
+
+    // "Navigate to meeting point" Tap Selection
+    
+    
+    // Keyboard done button
+    
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         destinationPoint.resignFirstResponder()
         startingPoint.resignFirstResponder()
+        
+        // Call same action function as button "Find Walking Buddy"
+        onFind(self)
+        
         return true
     }
     
+    // Show map with 989 destination and drop pins
     func destintationMapMatches(){
-        self.mapImage.image = UIImage(named: "map-989-market.png")
+        self.mapImage.image = UIImage(named: "map-address-entered.png")
         UIView.animateWithDuration(0.7, delay: 0.5, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
         self.pinJamesImage.frame.origin.y = CGFloat(141)
-        self.pinEmilyImage.frame.origin.y = CGFloat(232)
+        self.pinEmilyButton.frame.origin.y = CGFloat(270)
         
         }, completion: { (finished: Bool) -> Void in
         })
     }
     
+    // Show map of current location and move pins off screen
     func currentLocationMap(){
         self.mapImage.image = UIImage(named: "map-current-location.png")
-    }
-    
-
-    @IBAction func onTapDismiss(sender: AnyObject) {
-        navigationController?.popToRootViewControllerAnimated(true)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        pinJamesImage.frame.origin.y = CGFloat(-200)
+        pinEmilyButton.frame.origin.y = CGFloat(-200)
     }
     
     func delay(delay:Double, closure:()->()) {
@@ -177,4 +222,22 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, MKMa
             dispatch_get_main_queue(), closure)
     }
 
+
+    @IBAction func onTapDismiss(sender: AnyObject) {
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        var destinationViewController = segue.destinationViewController as MatchDetailViewController
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationViewController.transitioningDelegate = self
+        
+    }
+
+    
 }

@@ -8,8 +8,9 @@
 
 import UIKit
 
-class MatchDetailViewController: UIViewController {
+class MatchDetailViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +24,15 @@ class MatchDetailViewController: UIViewController {
     }
     
     @IBAction func onCloseButton(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+       dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    @IBAction func onMeetButton(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: { () -> Void in
+            // Change something in the dashboard view controller
+            
+        })
     }
 
     /*
