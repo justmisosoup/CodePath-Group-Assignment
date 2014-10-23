@@ -453,7 +453,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="MEi-PR-3bw" kind="modal" id="OnY-ma-WJe"/>
+                                                    <segue destination="MEi-PR-3bw" kind="custom" identifier="pinkSegue" id="oEl-Np-PjU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5tS-F1-3O4">

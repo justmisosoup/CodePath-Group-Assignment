@@ -133,6 +133,8 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
         return 0.4
     }
     
+    // How to check the segue identifier?
+    
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         // TODO: animate the transition in Step 3 below
         println("animating transition")
@@ -233,9 +235,18 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        var destinationViewController = segue.destinationViewController as MatchDetailViewController
-        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-        destinationViewController.transitioningDelegate = self
+        if (segue.identifier == "matchDetailSegue") {
+            var destinationViewController = segue.destinationViewController as MatchDetailViewController
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = self
+            
+        } else if (segue.identifier == "pinkSegue"){
+            var destinationViewController = segue.destinationViewController as UIViewController
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = self
+        }
+        
+        
         
     }
 
