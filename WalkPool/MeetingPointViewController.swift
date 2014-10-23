@@ -23,6 +23,7 @@ class MeetingPointViewController: UIViewController {
         directions1.hidden = false
         greyChevron.hidden = false
         rendezvousMessage.hidden = false
+        meetingAlert.hidden = true
 
     }
 
@@ -45,6 +46,10 @@ class MeetingPointViewController: UIViewController {
         arrivedMessage.hidden = false
     }
     
+    @IBAction func confirmArrivalButton(sender: AnyObject) {
+        
+        
+    }
     
     @IBAction func onDismissDirections(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)

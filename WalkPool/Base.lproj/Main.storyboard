@@ -146,6 +146,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-halfway-point" id="iJM-2u-pCK">
+                                        <rect key="frame" x="0.0" y="70" width="320" height="319"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <view alpha="0.69999999999999996" contentMode="scaleToFill" id="moy-nF-d6H">
                                         <rect key="frame" x="0.0" y="389" width="320" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -185,6 +189,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="confirmArrivalButton:" destination="MEi-PR-3bw" eventType="touchUpInside" id="ADY-X2-xI5"/>
                                                     <action selector="onFind:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="SU4-WV-dof"/>
                                                     <segue destination="6O1-Gy-cLW" kind="modal" modalTransitionStyle="coverVertical" id="9iQ-Z7-AQt"/>
                                                 </connections>
@@ -202,10 +207,6 @@
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-halfway-point" id="iJM-2u-pCK">
-                                        <rect key="frame" x="0.0" y="70" width="320" height="319"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" id="qpt-9V-K68">
