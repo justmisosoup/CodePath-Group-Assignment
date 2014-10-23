@@ -102,7 +102,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Czh-Of-Y20">
-                                                <rect key="frame" x="10" y="12" width="14" height="22"/>
+                                                <rect key="frame" x="12" y="12" width="14" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="close">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,19 +134,125 @@
             </objects>
             <point key="canvasLocation" x="33" y="962"/>
         </scene>
-        <!--View Controller-->
+        <!--Meeting Point View Controller-->
         <scene sceneID="wiv-4Q-imR">
             <objects>
-                <viewController id="MEi-PR-3bw" sceneMemberID="viewController">
+                <viewController id="MEi-PR-3bw" customClass="MeetingPointViewController" customModule="WalkPool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v6f-vO-1t8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="pY9-nM-jDv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" id="moy-nF-d6H">
+                                        <rect key="frame" x="0.0" y="389" width="320" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet at the rendezvous site..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JaD-Xi-JI4">
+                                                <rect key="frame" x="8" y="15" width="300" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We see you have arrived!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ILQ-So-ZET">
+                                                <rect key="frame" x="8" y="15" width="300" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="xEq-rd-Hlp">
+                                        <rect key="frame" x="0.0" y="450" width="320" height="118"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walk 0.5 miles South on Mission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bGk-kV-KP5">
+                                                <rect key="frame" x="1" y="42" width="300" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uMj-BI-j0C">
+                                                <rect key="frame" x="25" y="35" width="270" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Confirm Arrival" backgroundImage="buttonactive">
+                                                    <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onFind:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="SU4-WV-dof"/>
+                                                    <segue destination="6O1-Gy-cLW" kind="modal" modalTransitionStyle="coverVertical" id="9iQ-Z7-AQt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nHC-5G-Grq">
+                                                <rect key="frame" x="292" y="48" width="12" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="chevrongrey">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onNextInstrution:" destination="MEi-PR-3bw" eventType="touchUpInside" id="KOq-Og-AsV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-halfway-point" id="iJM-2u-pCK">
+                                        <rect key="frame" x="0.0" y="70" width="320" height="319"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" id="qpt-9V-K68">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6Su-7a-9O5">
+                                <rect key="frame" x="12" y="36" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCloseButton:" destination="7xl-H1-FBh" eventType="touchUpInside" id="ddK-Pp-aak"/>
+                                    <action selector="onDismissDirections:" destination="MEi-PR-3bw" eventType="touchUpInside" id="TPa-Lk-SYL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="arrivedMessage" destination="ILQ-So-ZET" id="VoD-gG-Ybi"/>
+                        <outlet property="confirmButton" destination="uMj-BI-j0C" id="UKl-5g-n2v"/>
+                        <outlet property="directions1" destination="bGk-kV-KP5" id="Qnk-e6-rgJ"/>
+                        <outlet property="greyChevron" destination="nHC-5G-Grq" id="RCq-f2-L1b"/>
+                        <outlet property="mapImage" destination="iJM-2u-pCK" id="7sA-x2-hyl"/>
+                        <outlet property="rendezvousMessage" destination="JaD-Xi-JI4" id="hUP-w5-Evf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNM-WC-DHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400" y="956"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ihn-c9-c2m">
+            <objects>
+                <viewController id="6O1-Gy-cLW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XIo-U5-I0H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Us0-lQ-J1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784" y="956"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="eSE-WN-012">
@@ -451,7 +557,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="MEi-PR-3bw" kind="custom" identifier="pinkSegue" id="oEl-Np-PjU"/>
+                                                    <segue destination="MEi-PR-3bw" kind="modal" identifier="pinkSegue" id="oEl-Np-PjU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5tS-F1-3O4">
@@ -522,7 +628,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n2z-cM-X1r">
-                                <rect key="frame" x="12" y="37" width="20" height="22"/>
+                                <rect key="frame" x="12" y="12" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -619,6 +725,7 @@
         <image name="avatar" width="36" height="36"/>
         <image name="buttonactive" width="270" height="48"/>
         <image name="chevron" width="13" height="22"/>
+        <image name="chevrongrey" width="12" height="21"/>
         <image name="close" width="14" height="14"/>
         <image name="emily" width="200" height="150"/>
         <image name="header" width="320" height="70"/>
@@ -638,6 +745,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7QN-lW-NQX"/>
+        <segue reference="eSN-fx-wG2"/>
     </inferredMetricsTieBreakers>
 </document>

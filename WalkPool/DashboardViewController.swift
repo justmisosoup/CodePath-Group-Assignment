@@ -241,9 +241,9 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
             destinationViewController.transitioningDelegate = self
             
         } else if (segue.identifier == "pinkSegue"){
-            var destinationViewController = segue.destinationViewController as UIViewController
-            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-            destinationViewController.transitioningDelegate = self
+//            var destinationViewController = segue.destinationViewController as UIViewController
+//            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+//            destinationViewController.transitioningDelegate = self
         }
         
         
