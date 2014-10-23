@@ -26,19 +26,23 @@ class MenuViewController: UIViewController, UIViewControllerTransitioningDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func onLogOut(sender: AnyObject) {
+        
+        delay(3){
+            self.performSegueWithIdentifier("logoutSegue", sender: self)
+        }
+}
     
     @IBAction func onProfileButton(sender: UIButton) {
         performSegueWithIdentifier("AccountSegue", sender: self)
          }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
-    */
-
 }

@@ -31,20 +31,21 @@ class MatchDetailViewController: UIViewController, UIViewControllerTransitioning
     
     
     @IBAction func onMeetButton(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: { () -> Void in
-            // Change something in the dashboard view controller
-            
-        })
+        
+        performSegueWithIdentifier("routeToSegue", sender: nil)
+//        dismissViewControllerAnimated(true, completion: { () -> Void in
+//            
+//            
+//        })
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
-    */
 
-}
+  }

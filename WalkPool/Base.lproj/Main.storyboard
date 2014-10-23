@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ea5-8F-ENI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="7xl-H1-FBh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBY-nC-9ao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-920" y="272"/>
+            <point key="canvasLocation" x="-810" y="280"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="CHo-GO-0At">
@@ -250,10 +250,37 @@
                                     <action selector="onDismissDirections:" destination="MEi-PR-3bw" eventType="touchUpInside" id="TPa-Lk-SYL"/>
                                 </connections>
                             </button>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" id="dwM-Ny-UsG">
+                                <rect key="frame" x="-3" y="0.0" width="325" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="REv-6n-PqZ">
+                                        <rect key="frame" x="144" y="196" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for approval..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vfX-hh-LUz">
+                                        <rect key="frame" x="2" y="241" width="321" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emily approved this request!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KTD-5v-RLQ">
+                                        <rect key="frame" x="2" y="241" width="321" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="REv-6n-PqZ" id="zce-Jm-CmD"/>
+                        <outlet property="approvedConfirmation" destination="KTD-5v-RLQ" id="Pfz-Tg-Kbh"/>
                         <outlet property="arrivedMessage" destination="ILQ-So-ZET" id="VoD-gG-Ybi"/>
                         <outlet property="confirmButton" destination="uMj-BI-j0C" id="UKl-5g-n2v"/>
                         <outlet property="directions1" destination="bGk-kV-KP5" id="Qnk-e6-rgJ"/>
@@ -261,9 +288,11 @@
                         <outlet property="emilyEnRoute" destination="f0L-vt-oUH" id="TK2-ik-aRI"/>
                         <outlet property="greyChevron" destination="nHC-5G-Grq" id="RCq-f2-L1b"/>
                         <outlet property="loadingImg" destination="fq8-zv-MnM" id="Ftu-Yq-NRv"/>
+                        <outlet property="magicFog" destination="dwM-Ny-UsG" id="h8a-qn-SJn"/>
                         <outlet property="mapImage" destination="iJM-2u-pCK" id="7sA-x2-hyl"/>
                         <outlet property="readyToGoButton" destination="ZX2-W5-qeH" id="cFQ-Yk-rhS"/>
                         <outlet property="rendezvousMessage" destination="JaD-Xi-JI4" id="hUP-w5-Evf"/>
+                        <outlet property="waitingForApproval" destination="vfX-hh-LUz" id="oPI-AV-vua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNM-WC-DHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -723,6 +752,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onMeetButton:" destination="7xl-H1-FBh" eventType="touchUpInside" id="GUn-rZ-CYc"/>
+                                    <segue destination="MEi-PR-3bw" kind="modal" identifier="routeToSegue" id="3pD-zz-SqE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -762,6 +792,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eSN-fx-wG2"/>
+        <segue reference="7QN-lW-NQX"/>
+        <segue reference="3pD-zz-SqE"/>
     </inferredMetricsTieBreakers>
 </document>

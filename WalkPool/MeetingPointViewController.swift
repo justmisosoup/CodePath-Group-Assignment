@@ -10,6 +10,10 @@ import UIKit
 
 class MeetingPointViewController: UIViewController {
 
+    @IBOutlet weak var approvedConfirmation: UILabel!
+    @IBOutlet weak var waitingForApproval: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var magicFog: UIView!
     @IBOutlet weak var emilyArrivedMsg: UILabel!
     @IBOutlet weak var readyToGoButton: UIButton!
     @IBOutlet weak var loadingImg: UIImageView!
@@ -27,10 +31,35 @@ class MeetingPointViewController: UIViewController {
         directions1.hidden = false
         greyChevron.hidden = false
         rendezvousMessage.hidden = false
-        loadingImg.hidden = true
         emilyEnRoute.hidden = true
         readyToGoButton.hidden = true
         emilyArrivedMsg.hidden = true
+        approvedConfirmation.hidden = true
+        loadingImg.hidden = true
+        
+        activityIndicator.startAnimating()
+        magicFog.hidden = false
+        waitingForApproval.hidden = false
+        
+        delay(2) {
+            self.activityIndicator.stopAnimating()
+            
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.waitingForApproval.hidden = true
+                self.approvedConfirmation.hidden = false
+                self.activityIndicator.hidden = true
+            })
+            
+        }
+        
+        delay(3) {
+            
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                self.magicFog.alpha = 0
+            })
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
