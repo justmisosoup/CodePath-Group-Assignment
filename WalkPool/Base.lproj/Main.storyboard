@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ea5-8F-ENI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="MEi-PR-3bw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -154,15 +154,29 @@
                                         <rect key="frame" x="0.0" y="389" width="320" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet at the rendezvous site..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JaD-Xi-JI4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We see you have arrived!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ILQ-So-ZET">
                                                 <rect key="frame" x="8" y="15" width="300" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We see you have arrived!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ILQ-So-ZET">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting route to meeting point..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JaD-Xi-JI4">
                                                 <rect key="frame" x="8" y="15" width="300" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emily is still en route..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f0L-vt-oUH">
+                                                <rect key="frame" x="18" y="16" width="300" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emily has arrived!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5jX-PR-Lo2">
+                                                <rect key="frame" x="10" y="15" width="300" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -191,7 +205,6 @@
                                                 <connections>
                                                     <action selector="confirmArrivalButton:" destination="MEi-PR-3bw" eventType="touchUpInside" id="ADY-X2-xI5"/>
                                                     <action selector="onFind:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="SU4-WV-dof"/>
-                                                    <segue destination="6O1-Gy-cLW" kind="modal" modalTransitionStyle="coverVertical" id="9iQ-Z7-AQt"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nHC-5G-Grq">
@@ -203,6 +216,18 @@
                                                 <connections>
                                                     <action selector="onNextInstrution:" destination="MEi-PR-3bw" eventType="touchUpInside" id="KOq-Og-AsV"/>
                                                 </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-1" id="fq8-zv-MnM">
+                                                <rect key="frame" x="136" y="48" width="49" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZX2-W5-qeH">
+                                                <rect key="frame" x="25" y="35" width="270" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="We're ready to go!" backgroundImage="buttonactive">
+                                                    <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -232,28 +257,18 @@
                         <outlet property="arrivedMessage" destination="ILQ-So-ZET" id="VoD-gG-Ybi"/>
                         <outlet property="confirmButton" destination="uMj-BI-j0C" id="UKl-5g-n2v"/>
                         <outlet property="directions1" destination="bGk-kV-KP5" id="Qnk-e6-rgJ"/>
+                        <outlet property="emilyArrivedMsg" destination="5jX-PR-Lo2" id="Gmu-9A-xzf"/>
+                        <outlet property="emilyEnRoute" destination="f0L-vt-oUH" id="TK2-ik-aRI"/>
                         <outlet property="greyChevron" destination="nHC-5G-Grq" id="RCq-f2-L1b"/>
+                        <outlet property="loadingImg" destination="fq8-zv-MnM" id="Ftu-Yq-NRv"/>
                         <outlet property="mapImage" destination="iJM-2u-pCK" id="7sA-x2-hyl"/>
+                        <outlet property="readyToGoButton" destination="ZX2-W5-qeH" id="cFQ-Yk-rhS"/>
                         <outlet property="rendezvousMessage" destination="JaD-Xi-JI4" id="hUP-w5-Evf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNM-WC-DHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400" y="956"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ihn-c9-c2m">
-            <objects>
-                <viewController id="6O1-Gy-cLW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XIo-U5-I0H">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Us0-lQ-J1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="784" y="956"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="eSE-WN-012">
@@ -730,6 +745,7 @@
         <image name="close" width="14" height="14"/>
         <image name="emily" width="200" height="150"/>
         <image name="header" width="320" height="70"/>
+        <image name="loading-1" width="49" height="20"/>
         <image name="loginform" width="270" height="91"/>
         <image name="logo" width="165" height="39"/>
         <image name="map-current-location" width="320" height="319"/>

@@ -10,6 +10,10 @@ import UIKit
 
 class MeetingPointViewController: UIViewController {
 
+    @IBOutlet weak var emilyArrivedMsg: UILabel!
+    @IBOutlet weak var readyToGoButton: UIButton!
+    @IBOutlet weak var loadingImg: UIImageView!
+    @IBOutlet weak var emilyEnRoute: UILabel!
     @IBOutlet weak var arrivedMessage: UILabel!
     @IBOutlet weak var rendezvousMessage: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
@@ -23,17 +27,15 @@ class MeetingPointViewController: UIViewController {
         directions1.hidden = false
         greyChevron.hidden = false
         rendezvousMessage.hidden = false
-        meetingAlert.hidden = true
-
+        loadingImg.hidden = true
+        emilyEnRoute.hidden = true
+        readyToGoButton.hidden = true
+        emilyArrivedMsg.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func navigationArrivedMap(){
-        self.mapImage.image = UIImage(named: "navigationarrived.png")
     }
     
     @IBAction func onNextInstrution(sender: AnyObject) {
@@ -42,26 +44,63 @@ class MeetingPointViewController: UIViewController {
         greyChevron.hidden = true
         rendezvousMessage.hidden = true
         
-        confirmButton.hidden = false
-        arrivedMessage.hidden = false
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.confirmButton.hidden = false
+            self.arrivedMessage.hidden = false
+        })
+        
     }
     
     @IBAction func confirmArrivalButton(sender: AnyObject) {
+      navigationRouteGroup()
+        directions1.hidden = true
+        greyChevron.hidden = true
+        rendezvousMessage.hidden = true
+        confirmButton.hidden = true
+        arrivedMessage.hidden = true
+        emilyEnRoute.hidden = false
+        loadingImg.hidden = false
         
+        var images = UIImage.animatedImageNamed("loading-", duration: 1)
+        loadingImg.image = images
         
+        delay(4) {
+            self.emilyArrived()
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.loadingImg.hidden = true
+                self.emilyEnRoute.hidden = true
+
+                self.readyToGoButton.hidden = false
+                self.emilyArrivedMsg.hidden = false
+            })
+        }
+        
+    }
+    
+    func emilyArrived(){
+        self.mapImage.image = UIImage(named: "navigationarrived.png")
+    }
+    
+    func navigationRouteGroup(){
+        self.mapImage.image = UIImage(named: "map-current-location.png")
+    }
+    
+    func navigationArrivedMap(){
+        self.mapImage.image = UIImage(named: "navigationarrived.png")
     }
     
     @IBAction func onDismissDirections(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
-    */
+
 
 }
