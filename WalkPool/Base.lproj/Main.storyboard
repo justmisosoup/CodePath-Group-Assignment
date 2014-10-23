@@ -132,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49B-f3-aa7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="962"/>
+            <point key="canvasLocation" x="33" y="1004"/>
         </scene>
         <!--Meeting Point View Controller-->
         <scene sceneID="wiv-4Q-imR">
@@ -228,6 +228,9 @@
                                                     <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="readyToGoButton:" destination="MEi-PR-3bw" eventType="touchUpInside" id="X48-pN-MkA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -250,7 +253,7 @@
                                     <action selector="onDismissDirections:" destination="MEi-PR-3bw" eventType="touchUpInside" id="TPa-Lk-SYL"/>
                                 </connections>
                             </button>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" id="dwM-Ny-UsG">
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" id="dwM-Ny-UsG">
                                 <rect key="frame" x="-3" y="0.0" width="325" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -272,6 +275,17 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4IR-My-aag">
+                                        <rect key="frame" x="113" y="494" width="85" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel Walk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelWalkButton:" destination="MEi-PR-3bw" eventType="touchUpInside" id="BSE-9e-hzm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
@@ -297,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNM-WC-DHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="956"/>
+            <point key="canvasLocation" x="464" y="1004"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="eSE-WN-012">
@@ -381,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pbo-YE-ifm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-414" y="962"/>
+            <point key="canvasLocation" x="-414" y="1004"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="Yyc-1N-4sl">
@@ -433,11 +447,11 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" id="Ry4-IH-u9O">
-                                        <rect key="frame" x="0.0" y="362" width="320" height="132"/>
+                                        <rect key="frame" x="0.0" y="358" width="320" height="136"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dFi-4g-Xb4">
-                                                <rect key="frame" x="25" y="13" width="270" height="48"/>
+                                                <rect key="frame" x="25" y="17" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Sign In" backgroundImage="buttonactive">
                                                     <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -448,7 +462,7 @@
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lost Password?" textAlignment="center" selectable="NO" id="all-Ce-QbD">
-                                                <rect key="frame" x="26" y="72" width="267" height="40"/>
+                                                <rect key="frame" x="26" y="76" width="267" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -653,7 +667,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3za-AI-as9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="280"/>
+            <point key="canvasLocation" x="464" y="280"/>
         </scene>
         <!--Match Detail View Controller-->
         <scene sceneID="0Sa-gM-d5m">
@@ -764,7 +778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkF-4o-wdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="280"/>
+            <point key="canvasLocation" x="916" y="280"/>
         </scene>
     </scenes>
     <resources>

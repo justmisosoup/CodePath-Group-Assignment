@@ -74,9 +74,6 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
     
     func keyboardWillShow(notification: NSNotification!) {
         
-                self.formView.tag = Int(self.formView.frame.origin.y)
-                self.buttonView.tag = Int(self.buttonView.frame.origin.y)
-        
         var userInfo = notification.userInfo!
         
         // Get the keyboard height and width from the notification
@@ -86,6 +83,9 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
         var animationDuration = durationValue.doubleValue
         var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
         var animationCurve = curveValue.integerValue
+        
+        formView.tag = Int(self.formView.frame.origin.y)
+        buttonView.tag = Int(self.buttonView.frame.origin.y)
         
         UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
                         self.subContent.alpha = 0

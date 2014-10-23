@@ -41,7 +41,7 @@ class MeetingPointViewController: UIViewController {
         magicFog.hidden = false
         waitingForApproval.hidden = false
         
-        delay(2) {
+        delay(8) {
             self.activityIndicator.stopAnimating()
             
             UIView.animateWithDuration(0.3, animations: { () -> Void in
@@ -69,28 +69,22 @@ class MeetingPointViewController: UIViewController {
     
     @IBAction func onNextInstrution(sender: AnyObject) {
         navigationArrivedMap()
-        directions1.hidden = true
-        greyChevron.hidden = true
-        rendezvousMessage.hidden = false
-        loadingImg.hidden = false
-
-        var images = UIImage.animatedImageNamed("loading-", duration: 1)
-        loadingImg.image = images
-        
-        delay(4) {
-            self.emilyArrived()
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
-                self.rendezvousMessage.hidden = true
-                self.loadingImg.hidden = true
-                self.confirmButton.hidden = false
-                self.arrivedMessage.hidden = false
-            })
-        }
-        
     }
     
     @IBAction func confirmArrivalButton(sender: AnyObject) {
       navigationRouteGroup()
+    }
+    
+    @IBAction func readyToGoButton(sender: AnyObject) {
+    }
+    
+    
+    func emilyArrived(){
+        self.mapImage.image = UIImage(named: "navigationarrived.png")
+    }
+    
+    func navigationRouteGroup(){
+        self.mapImage.image = UIImage(named: "map-current-location.png")
         directions1.hidden = true
         greyChevron.hidden = true
         rendezvousMessage.hidden = true
@@ -107,24 +101,41 @@ class MeetingPointViewController: UIViewController {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.loadingImg.hidden = true
                 self.emilyEnRoute.hidden = true
-
+                
                 self.readyToGoButton.hidden = false
                 self.emilyArrivedMsg.hidden = false
             })
         }
+
         
-    }
-    
-    func emilyArrived(){
-        self.mapImage.image = UIImage(named: "navigationarrived.png")
-    }
-    
-    func navigationRouteGroup(){
-        self.mapImage.image = UIImage(named: "map-current-location.png")
     }
     
     func navigationArrivedMap(){
         self.mapImage.image = UIImage(named: "navigationarrived.png")
+        
+        directions1.hidden = true
+        greyChevron.hidden = true
+        rendezvousMessage.hidden = false
+        loadingImg.hidden = false
+        
+        var images = UIImage.animatedImageNamed("loading-", duration: 1)
+        loadingImg.image = images
+        
+        delay(4) {
+            self.emilyArrived()
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.rendezvousMessage.hidden = true
+                self.loadingImg.hidden = true
+                self.confirmButton.hidden = false
+                self.arrivedMessage.hidden = false
+            })
+        }
+
+    }
+    
+    @IBAction func cancelWalkButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     @IBAction func onDismissDirections(sender: AnyObject) {
