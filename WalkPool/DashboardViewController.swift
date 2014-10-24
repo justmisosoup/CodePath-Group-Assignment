@@ -26,6 +26,9 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     var matchDetailViewController: UIViewController!
     var isPresenting: Bool = true
     
+//    var goodAlert = UIAlertView(title: "Thanks!", message: "We appreciate your feedback!", delegate: self, cancelButtonTitle: nil, otherButtonTitles: nil)
+
+    
     let blue = UIColor(red: 90/255, green: 181/255, blue: 211/255, alpha: 1)
     let gray = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
     
@@ -80,7 +83,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     }
     
     func alertView(View: UIAlertView!, clickedButtonAtIndex buttonIndex: Int){
-        var alertView2 = UIAlertView(title: "Searching...", message: nil, delegate: self, cancelButtonTitle: nil)
+    
         switch buttonIndex{
             
         case 1:
@@ -195,14 +198,6 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
-                    
-//                    self.startingPoint.text = "Current Location"
-//                    self.destinationPoint.text = "984 Mission Street"
-//                    self.mapImage.image = UIImage(named: "map-halfway-point.png")
-//                    self.pinJamesImage.frame.origin.y = CGFloat(-200)
-//                    self.pinEmilyButton.frame.origin = CGPoint(x: 50 , y: 307)
-//                    self.findButton.hidden = true
-//                    self.meetingPointButton.hidden = false
                     
             }
         }
