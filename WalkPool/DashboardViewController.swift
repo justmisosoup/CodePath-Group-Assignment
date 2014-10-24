@@ -169,13 +169,13 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
                     
-                    self.startingPoint.text = "Current Location"
-                    self.destinationPoint.text = "984 Mission Street"
-                    self.mapImage.image = UIImage(named: "map-halfway-point.png")
-                    self.pinJamesImage.frame.origin.y = CGFloat(-200)
-                    self.pinEmilyButton.frame.origin = CGPoint(x: 50 , y: 307)
-                    self.findButton.hidden = true
-                    self.meetingPointButton.hidden = false
+//                    self.startingPoint.text = "Current Location"
+//                    self.destinationPoint.text = "984 Mission Street"
+//                    self.mapImage.image = UIImage(named: "map-halfway-point.png")
+//                    self.pinJamesImage.frame.origin.y = CGFloat(-200)
+//                    self.pinEmilyButton.frame.origin = CGPoint(x: 50 , y: 307)
+//                    self.findButton.hidden = true
+//                    self.meetingPointButton.hidden = false
                     
                     
                     
