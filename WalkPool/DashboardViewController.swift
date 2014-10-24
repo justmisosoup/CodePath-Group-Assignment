@@ -22,12 +22,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var dashboardView: UIView!
     @IBOutlet weak var meetingPointButton: UIButton!
-    //@IBOutlet var mapView: MKMapView!
 
-    
-//    var locationManager: CLLocationManager!
-//    var showsUserLocation : Bool!
-//    var userLocationVisibile : Bool!
     var matchDetailViewController: UIViewController!
     var isPresenting: Bool = true
     
@@ -56,7 +51,16 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     
     }
     
+    @IBAction func walkCompleted(sender: UIStoryboardSegue) {
+        var sourceViewController = sender.sourceViewController as UIViewController
 
+        if let checkMeetingPointViewController = sourceViewController as? MeetingPointViewController {
+            // DO SOMETHING MAGIC
+        } else if let checkMatchDetailViewController = sourceViewController as? MatchDetailViewController {
+            // DO SOMETHING ELSE THAT IS MORE MAGIC
+        }
+    }
+    
     @IBAction func onTapDismissKeyboard(sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
