@@ -55,9 +55,46 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
         var sourceViewController = sender.sourceViewController as UIViewController
 
         if let checkMeetingPointViewController = sourceViewController as? MeetingPointViewController {
-            // DO SOMETHING MAGIC
-        } else if let checkMatchDetailViewController = sourceViewController as? MatchDetailViewController {
-            // DO SOMETHING ELSE THAT IS MORE MAGIC
+            println("MEETING POINT IS COMING BACK")
+            
+            destinationPoint.text = ""
+            startingPoint.text = "Current Location"
+            currentLocationMap()
+            showAlert()
+
+            }
+    }
+    
+    func showAlert(){
+        var createAccountErrorAlert: UIAlertView = UIAlertView()
+        
+        createAccountErrorAlert.delegate = self
+        
+        createAccountErrorAlert.title = "How would you rate Emily?"
+        createAccountErrorAlert.message = "We'd like to know so we can keep other Walkpoolers safe and happy!"
+        createAccountErrorAlert.addButtonWithTitle("Great")
+        createAccountErrorAlert.addButtonWithTitle("Not so Great")
+        createAccountErrorAlert.addButtonWithTitle("No Opinion")
+        
+        createAccountErrorAlert.show()
+    }
+    
+    func alertView(View: UIAlertView!, clickedButtonAtIndex buttonIndex: Int){
+        var alertView2 = UIAlertView(title: "Searching...", message: nil, delegate: self, cancelButtonTitle: nil)
+        switch buttonIndex{
+            
+        case 1:
+                NSLog("Great");
+        break;
+            
+        case 0:
+            NSLog("Not so Great");
+        break;
+            
+        default:
+            NSLog("No Opinion");
+        break;
+            
         }
     }
     
@@ -72,50 +109,40 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
         delay(1, closure: { () -> () in
             
             // Locations are Correct! Will return images.
+            
             if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text == "989 Market Street") {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 
-                // Return image with complete route.
-                // Drop buddy pins.
                 self.destintationMapMatches()
-//                self.findButton.enabled = false
-
                 
              }
                 
             // Destination is Empty! Will return images.
+            
             else if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text.isEmpty) {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 UIAlertView(title: "Whoops!", message: "In order to find walking buddies, you need to indicate a destination.", delegate: nil, cancelButtonTitle: "Try Again...").show()
                 
-                // Return image with current location but no destination.
-                // No buddy pins.
-                // No destination point.
-                // Technically won't change from originating image.
                 self.currentLocationMap()
                 
             }
                 
             // Destination is Empty! Will not return results.
+            
             else if(self.startingPoint.text.isEmpty ) && (self.destinationPoint.text == "989 Market Street") {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 self.startingPoint.text = "Current Location"
                 
-                // Return image with complete route.
-                // Drop buddy pins.
                 self.destintationMapMatches()
                 
             }
                 
              // Locations are Wrong! Will not return results.
+            
             else {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 UIAlertView(title: "Yikes!", message: "Where do you think you are? Your destination does not exist!", delegate: nil, cancelButtonTitle: "Try Again...").show()
                 
-                // Return image with current location but no destination.
-                // No buddy pins.
-                // No destination point.
-                // Technically won't change from originating image.
                 self.currentLocationMap()
                 
             }
@@ -155,7 +182,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
             println("intro segue")
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
                 toViewController.view.alpha = 1
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
@@ -176,8 +203,6 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
 //                    self.pinEmilyButton.frame.origin = CGPoint(x: 50 , y: 307)
 //                    self.findButton.hidden = true
 //                    self.meetingPointButton.hidden = false
-                    
-                    
                     
             }
         }

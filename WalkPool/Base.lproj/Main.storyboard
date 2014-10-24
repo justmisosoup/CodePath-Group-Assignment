@@ -229,7 +229,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Lof-LT-pqB" kind="unwind" unwindAction="walkCompleted:" id="KqC-V3-Y18"/>
+                                                    <segue destination="Lof-LT-pqB" kind="unwind" unwindAction="walkCompleted:" id="UKV-UX-tD2"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -664,7 +664,7 @@
                         <outlet property="pinJamesImage" destination="mgb-AP-AeJ" id="trK-5c-w05"/>
                         <outlet property="scrollView" destination="fzD-X6-qVh" id="vcp-kB-TpO"/>
                         <outlet property="startingPoint" destination="zL9-iV-1Z4" id="4e8-Vz-mDA"/>
-                        <segue destination="7xl-H1-FBh" kind="custom" identifier="matchDetailSegue" id="o0B-gK-TDE"/>
+                        <segue destination="7xl-H1-FBh" kind="modal" identifier="matchDetailSegue" id="o0B-gK-TDE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3za-AI-as9" sceneMemberID="firstResponder"/>
