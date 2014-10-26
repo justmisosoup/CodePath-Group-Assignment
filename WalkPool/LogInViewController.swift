@@ -18,7 +18,12 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
     @IBOutlet weak var formView: UIView!
     @IBOutlet weak var buttonView: UIView!
     
-    // Prompt UIAlertView when signInBtn is tapped
+
+    override func viewDidAppear(animated: Bool) {
+        self.emailTextField.isFirstResponder()
+        self.passwordTextField.isFirstResponder()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +33,7 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
         logoImg.alpha = 1
         
         emailTextField.delegate = self
+        passwordTextField.delegate = self
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
 
@@ -51,6 +57,11 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
                 
             }
                 
+            else if(self.emailTextField.text == "corin.nader@gmail.com" ) && (self.passwordTextField.text == "password") {
+                    alertView.dismissWithClickedButtonIndex(0, animated: true)
+                    self.performSegueWithIdentifier("logInSegue", sender: self)
+            }
+                
             // Credentials were empty UIAlertView!
                 
             else if(self.emailTextField.text.isEmpty ) && (self.passwordTextField.text.isEmpty) {
@@ -71,6 +82,17 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
         
         }
     
+    // From password field keyboard enter logs in
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        passwordTextField.resignFirstResponder()
+        self.logoImg.hidden = true
+        self.subContent.hidden = true
+        
+        // Call same action function as button "Find Walking Buddy"
+        onClickSignIn(self)
+        
+        return true
+    }
     
     func keyboardWillShow(notification: NSNotification!) {
         
@@ -117,6 +139,9 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
             
             }, completion: nil)
     }
+    
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

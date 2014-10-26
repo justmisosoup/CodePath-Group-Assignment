@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="cgA-Ko-aFB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="MEi-PR-3bw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -131,15 +131,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="dwM-Ny-UsG" userLabel="Request Approval View">
+                                <rect key="frame" x="-3" y="0.0" width="325" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="REv-6n-PqZ">
+                                        <rect key="frame" x="144" y="196" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for approval..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vfX-hh-LUz">
+                                        <rect key="frame" x="2" y="241" width="321" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emily approved this request!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KTD-5v-RLQ">
+                                        <rect key="frame" x="2" y="241" width="321" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4IR-My-aag">
+                                        <rect key="frame" x="120" y="494" width="85" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel Walk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelWalkButton:" destination="MEi-PR-3bw" eventType="touchUpInside" id="BSE-9e-hzm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="pY9-nM-jDv">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-halfway-point" id="iJM-2u-pCK">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-meeting-point" id="iJM-2u-pCK">
                                         <rect key="frame" x="0.0" y="70" width="320" height="319"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" id="moy-nF-d6H">
+                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" id="moy-nF-d6H" userLabel="Messaging">
                                         <rect key="frame" x="0.0" y="389" width="320" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -150,7 +186,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting route to meeting point..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JaD-Xi-JI4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting route to meeting point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JaD-Xi-JI4" userLabel="Starting route to meeting point...">
                                                 <rect key="frame" x="8" y="15" width="300" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
@@ -174,7 +210,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="xEq-rd-Hlp">
+                                    <view contentMode="scaleToFill" id="xEq-rd-Hlp" userLabel="Navigation View">
                                         <rect key="frame" x="0.0" y="450" width="320" height="118"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -187,7 +223,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uMj-BI-j0C">
                                                 <rect key="frame" x="25" y="35" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Confirm Arrival" backgroundImage="buttonactive">
+                                                <state key="normal" title="Confirm Arrival" backgroundImage="button-active">
                                                     <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -196,14 +232,14 @@
                                                     <action selector="onFind:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="SU4-WV-dof"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nHC-5G-Grq">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nHC-5G-Grq" userLabel="Next Instruction Button >">
                                                 <rect key="frame" x="292" y="48" width="12" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="chevrongrey">
+                                                <state key="normal" image="chevron-grey">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="onNextInstrution:" destination="MEi-PR-3bw" eventType="touchUpInside" id="KOq-Og-AsV"/>
+                                                    <action selector="onNextInstruction:" destination="MEi-PR-3bw" eventType="touchUpInside" id="3mf-Vy-Tgn"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-1" id="fq8-zv-MnM">
@@ -213,7 +249,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZX2-W5-qeH">
                                                 <rect key="frame" x="25" y="35" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="We're ready to go!" backgroundImage="buttonactive">
+                                                <state key="normal" title="We're ready to go!" backgroundImage="button-active">
                                                     <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -224,7 +260,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Foe-ez-Xyy">
                                                 <rect key="frame" x="25" y="35" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Walk Completed" backgroundImage="buttonactive">
+                                                <state key="normal" title="Walk Completed" backgroundImage="button-active">
                                                     <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -235,6 +271,24 @@
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="current-location-dot" id="8ph-gM-Qh4">
+                                        <rect key="frame" x="95" y="214" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="current-location-arrow" id="7uV-Xg-trf">
+                                        <rect key="frame" x="149" y="158" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D0E-bf-S54" userLabel="Jame Pin Button">
+                                        <rect key="frame" x="40" y="253" width="57" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="pin-emily">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPinButton:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="tyg-gV-qos"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" id="qpt-9V-K68">
@@ -253,42 +307,6 @@
                                     <action selector="onDismissDirections:" destination="MEi-PR-3bw" eventType="touchUpInside" id="TPa-Lk-SYL"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" id="dwM-Ny-UsG">
-                                <rect key="frame" x="-3" y="0.0" width="325" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="REv-6n-PqZ">
-                                        <rect key="frame" x="144" y="196" width="37" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for approval..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vfX-hh-LUz">
-                                        <rect key="frame" x="2" y="241" width="321" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emily approved this request!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KTD-5v-RLQ">
-                                        <rect key="frame" x="2" y="241" width="321" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4IR-My-aag">
-                                        <rect key="frame" x="120" y="494" width="85" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Cancel Walk">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelWalkButton:" destination="MEi-PR-3bw" eventType="touchUpInside" id="BSE-9e-hzm"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
@@ -296,10 +314,14 @@
                         <outlet property="activityIndicator" destination="REv-6n-PqZ" id="zce-Jm-CmD"/>
                         <outlet property="approvedConfirmation" destination="KTD-5v-RLQ" id="Pfz-Tg-Kbh"/>
                         <outlet property="arrivedMessage" destination="ILQ-So-ZET" id="VoD-gG-Ybi"/>
+                        <outlet property="cancelWalkButton" destination="Foe-ez-Xyy" id="KNu-F6-vl7"/>
                         <outlet property="confirmButton" destination="uMj-BI-j0C" id="UKl-5g-n2v"/>
+                        <outlet property="currentLocationArrowImage" destination="7uV-Xg-trf" id="O80-jU-I63"/>
+                        <outlet property="currentLocationDotImage" destination="8ph-gM-Qh4" id="7pd-Ws-Or1"/>
                         <outlet property="directions1" destination="bGk-kV-KP5" id="Qnk-e6-rgJ"/>
                         <outlet property="emilyArrivedMsg" destination="5jX-PR-Lo2" id="Gmu-9A-xzf"/>
                         <outlet property="emilyEnRoute" destination="f0L-vt-oUH" id="TK2-ik-aRI"/>
+                        <outlet property="emilyPinButton" destination="D0E-bf-S54" id="KjR-9y-Gg8"/>
                         <outlet property="greyChevron" destination="nHC-5G-Grq" id="RCq-f2-L1b"/>
                         <outlet property="loadingImg" destination="fq8-zv-MnM" id="Ftu-Yq-NRv"/>
                         <outlet property="magicFog" destination="dwM-Ny-UsG" id="h8a-qn-SJn"/>
@@ -307,6 +329,7 @@
                         <outlet property="readyToGoButton" destination="ZX2-W5-qeH" id="cFQ-Yk-rhS"/>
                         <outlet property="rendezvousMessage" destination="JaD-Xi-JI4" id="hUP-w5-Evf"/>
                         <outlet property="waitingForApproval" destination="vfX-hh-LUz" id="oPI-AV-vua"/>
+                        <outlet property="walkCompletedButton" destination="Foe-ez-Xyy" id="JJ8-tz-agm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNM-WC-DHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -421,6 +444,10 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-form" id="VsS-Wo-JYd">
+                                                <rect key="frame" x="25" y="170" width="270" height="91"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="18" clearButtonMode="whileEditing" id="WZw-vd-Ky3">
                                                 <rect key="frame" x="28" y="179" width="264" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -435,12 +462,8 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginform" id="VsS-Wo-JYd">
-                                                <rect key="frame" x="25" y="170" width="270" height="91"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" id="frV-8q-a3A">
                                                 <rect key="frame" x="77" y="65" width="165" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,7 +477,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dFi-4g-Xb4">
                                                 <rect key="frame" x="25" y="17" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Sign In" backgroundImage="buttonactive">
+                                                <state key="normal" title="Sign In" backgroundImage="button-active">
                                                     <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -592,16 +615,6 @@
                                                 <rect key="frame" x="-2" y="88" width="320" height="319"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OFI-Mb-yQQ" userLabel="Jame Pin Button">
-                                                <rect key="frame" x="126" y="270" width="57" height="61"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="pin-emily">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onPinButton:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="pHb-O3-YQa"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mgb-AP-AeJ" userLabel="Emily PIn Button">
                                                 <rect key="frame" x="158" y="102" width="57" height="61"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -609,23 +622,25 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3Xv-2O-AC1">
-                                                <rect key="frame" x="25" y="428" width="270" height="48"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Navigate to meeting point" backgroundImage="buttonactive">
-                                                    <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5tS-F1-3O4">
                                                 <rect key="frame" x="25" y="428" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Find A Walking Buddy" backgroundImage="buttonactive">
+                                                <state key="normal" title="Find A Walking Buddy" backgroundImage="button-active">
                                                     <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="onFind:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="qOc-VP-m1j"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OFI-Mb-yQQ" userLabel="Jame Pin Button">
+                                                <rect key="frame" x="112" y="278" width="57" height="61"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="pin-emily">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onPinButton:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="pHb-O3-YQa"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -659,9 +674,8 @@
                         <outlet property="destinationPoint" destination="uCo-VT-J3a" id="SwB-EV-lOb"/>
                         <outlet property="findButton" destination="5tS-F1-3O4" id="S0u-ia-iuE"/>
                         <outlet property="mapImage" destination="5Qf-sS-JNS" id="g5V-yI-F2T"/>
-                        <outlet property="meetingPointButton" destination="3Xv-2O-AC1" id="KSj-BQ-Go0"/>
                         <outlet property="pinEmilyButton" destination="OFI-Mb-yQQ" id="kry-cR-d7B"/>
-                        <outlet property="pinJamesImage" destination="mgb-AP-AeJ" id="trK-5c-w05"/>
+                        <outlet property="pinJamesButton" destination="mgb-AP-AeJ" id="bOr-8T-fN4"/>
                         <outlet property="scrollView" destination="fzD-X6-qVh" id="vcp-kB-TpO"/>
                         <outlet property="startingPoint" destination="zL9-iV-1Z4" id="4e8-Vz-mDA"/>
                         <segue destination="7xl-H1-FBh" kind="modal" identifier="matchDetailSegue" id="o0B-gK-TDE"/>
@@ -693,21 +707,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n2z-cM-X1r">
-                                <rect key="frame" x="12" y="12" width="20" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="close">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onCloseButton:" destination="7xl-H1-FBh" eventType="touchUpInside" id="utf-OQ-9F8"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Ns2-li-A7d">
                                 <rect key="frame" x="0.0" y="235" width="320" height="339"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-halfway-point" id="Ge7-Zb-bDB">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-meeting-point" id="Ge7-Zb-bDB">
                                         <rect key="frame" x="0.0" y="-1" width="320" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -767,13 +771,23 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ism-jA-gEM">
                                 <rect key="frame" x="25" y="499" width="270" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Meet up with Emily" backgroundImage="buttonactive">
+                                <state key="normal" title="Meet up with Emily" backgroundImage="button-active">
                                     <color key="titleColor" red="0.33725490200000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onMeetButton:" destination="7xl-H1-FBh" eventType="touchUpInside" id="GUn-rZ-CYc"/>
                                     <segue destination="MEi-PR-3bw" kind="modal" identifier="routeToSegue" id="3pD-zz-SqE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n2z-cM-X1r">
+                                <rect key="frame" x="16" y="12" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCloseButton:" destination="7xl-H1-FBh" eventType="touchUpInside" id="utf-OQ-9F8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -790,16 +804,18 @@
     </scenes>
     <resources>
         <image name="avatar" width="36" height="36"/>
-        <image name="buttonactive" width="270" height="48"/>
-        <image name="chevrongrey" width="12" height="21"/>
+        <image name="button-active" width="270" height="48"/>
+        <image name="chevron-grey" width="12" height="21"/>
         <image name="close" width="14" height="14"/>
+        <image name="current-location-arrow" width="100" height="100"/>
+        <image name="current-location-dot" width="100" height="100"/>
         <image name="emily" width="200" height="150"/>
         <image name="header" width="320" height="70"/>
         <image name="loading-1" width="49" height="20"/>
-        <image name="loginform" width="270" height="91"/>
+        <image name="login-form" width="270" height="91"/>
         <image name="logo" width="165" height="39"/>
         <image name="map-current-location" width="320" height="319"/>
-        <image name="map-halfway-point" width="320" height="319"/>
+        <image name="map-meeting-point" width="320" height="319"/>
         <image name="menu" width="20" height="15"/>
         <image name="pin" width="12" height="17"/>
         <image name="pin-emily" width="57" height="61"/>

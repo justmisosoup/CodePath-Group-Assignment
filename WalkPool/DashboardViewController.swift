@@ -15,13 +15,13 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     @IBOutlet weak var destinationPoint: UITextField!
     @IBOutlet weak var startingPoint: UITextField!
     @IBOutlet weak var findButton: UIButton!
-    @IBOutlet weak var pinJamesImage: UIButton!
+    @IBOutlet weak var pinJamesButton: UIButton!
     @IBOutlet weak var pinEmilyButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var dashboardView: UIView!
-    @IBOutlet weak var meetingPointButton: UIButton!
+    //@IBOutlet weak var meetingPointButton: UIButton!
 
     var matchDetailViewController: UIViewController!
     var isPresenting: Bool = true
@@ -47,7 +47,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
         currentLocationMap()
         
         containerView.hidden = true
-        meetingPointButton.hidden = true
+        //meetingPointButton.hidden = true
         
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         matchDetailViewController = storyboard.instantiateViewControllerWithIdentifier("MatchDetailViewController") as UIViewController
@@ -111,8 +111,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
         
         delay(1, closure: { () -> () in
             
-            // Locations are Correct! Will return images.
-            
+            // Locations are Correct! Will return images
             if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text == "989 Market Street") {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 
@@ -120,8 +119,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
                 
              }
                 
-            // Destination is Empty! Will return images.
-            
+            // Destination is Empty! Will return images
             else if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text.isEmpty) {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 UIAlertView(title: "Whoops!", message: "In order to find walking buddies, you need to indicate a destination.", delegate: nil, cancelButtonTitle: "Try Again...").show()
@@ -130,7 +128,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
                 
             }
                 
-            // Destination is Empty! Will not return results.
+            // Destination is Empty! Will not return results
             
             else if(self.startingPoint.text.isEmpty ) && (self.destinationPoint.text == "989 Market Street") {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
@@ -140,8 +138,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
                 
             }
                 
-             // Locations are Wrong! Will not return results.
-            
+             // Locations are Wrong! Will not return results
             else {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
                 UIAlertView(title: "Yikes!", message: "Where do you think you are? Your destination does not exist!", delegate: nil, cancelButtonTitle: "Try Again...").show()
@@ -170,10 +167,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
         return 0.4
     }
     
-    // How to check the segue identifier?
-    
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        // TODO: animate the transition in Step 3 below
         println("animating transition")
         var containerView = transitionContext.containerView()
         var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
@@ -212,8 +206,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     // "Navigate to meeting point" Tap Selection
     
     
-    // Keyboard done button
-    
+    // Keyboard enter
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         destinationPoint.resignFirstResponder()
         startingPoint.resignFirstResponder()
@@ -228,7 +221,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     func destintationMapMatches(){
         self.mapImage.image = UIImage(named: "map-address-entered.png")
         UIView.animateWithDuration(0.7, delay: 0.5, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
-        self.pinJamesImage.frame.origin.y = CGFloat(141)
+        self.pinJamesButton.frame.origin.y = CGFloat(141)
         self.pinEmilyButton.frame.origin.y = CGFloat(270)
         
         }, completion: { (finished: Bool) -> Void in
@@ -238,7 +231,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     // Show map of current location and move pins off screen
     func currentLocationMap(){
         self.mapImage.image = UIImage(named: "map-current-location.png")
-        pinJamesImage.frame.origin.y = CGFloat(-200)
+        pinJamesButton.frame.origin.y = CGFloat(-200)
         pinEmilyButton.frame.origin.y = CGFloat(-200)
     }
     
