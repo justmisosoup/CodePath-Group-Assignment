@@ -153,6 +153,7 @@ class MeetingPointViewController: UIViewController {
             self.emilyPinButton.frame.origin = CGPoint(x: 124, y: 209 )
         })
         
+        // Emily has arrived
         delay(8) {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.loadingImg.hidden = true
@@ -163,6 +164,19 @@ class MeetingPointViewController: UIViewController {
             })
         }
     }
+    
+    // We're both here, let's go!
+    func navigationFinalDestination(){
+        self.mapImage.image = UIImage(named: "map-final-destination.png")
+        
+        self.loadingImg.hidden = true
+        self.emilyEnRoute.hidden = true
+        
+        self.readyToGoButton.hidden = true
+        self.emilyArrivedMsg.hidden = true
+        
+        
+    }
 
     
     @IBAction func cancelWalkButton(sender: AnyObject) {
@@ -171,6 +185,7 @@ class MeetingPointViewController: UIViewController {
 
     }
     
+    // Doesn't seem to be working
     @IBAction func onDismissDirections(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
         println("on dismiss directions")

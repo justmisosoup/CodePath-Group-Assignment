@@ -17,13 +17,7 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var formView: UIView!
     @IBOutlet weak var buttonView: UIView!
-    
 
-    override func viewDidAppear(animated: Bool) {
-        self.emailTextField.isFirstResponder()
-        self.passwordTextField.isFirstResponder()
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,11 +79,20 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
     // From password field keyboard enter logs in
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         passwordTextField.resignFirstResponder()
-        self.logoImg.hidden = true
-        self.subContent.hidden = true
+
         
-        // Call same action function as button "Find Walking Buddy"
-        onClickSignIn(self)
+        if (textField == emailTextField) {
+            passwordTextField.becomeFirstResponder()
+        }else if (textField == passwordTextField) {
+            passwordTextField.resignFirstResponder()
+            onClickSignIn(self)
+            self.subContent.alpha = 0
+            self.logoImg.alpha = 0
+            
+            // how to grab the keyboard animation here
+            //keyboardWillShow(notification: NSNotification!)
+        }
+        
         
         return true
     }
