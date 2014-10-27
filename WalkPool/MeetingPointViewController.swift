@@ -174,6 +174,7 @@ class MeetingPointViewController: UIViewController {
         
         self.readyToGoButton.hidden = true
         self.emilyArrivedMsg.hidden = true
+        self.emilyPinButton.hidden = true
         
         
     }

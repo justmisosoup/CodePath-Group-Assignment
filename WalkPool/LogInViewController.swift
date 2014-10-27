@@ -142,8 +142,6 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
             
             }, completion: nil)
     }
-    
-    
 
     
     override func didReceiveMemoryWarning() {
