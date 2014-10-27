@@ -12,48 +12,43 @@ class MeetingPointViewController: UIViewController {
 
     @IBOutlet weak var approvedConfirmation: UILabel!
     @IBOutlet weak var waitingForApproval: UILabel!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     @IBOutlet weak var magicFog: UIView!
+    @IBOutlet weak var emilyArrivedMsg: UILabel!
     @IBOutlet weak var readyToGoButton: UIButton!
     @IBOutlet weak var walkCompletedButton: UIButton!
-    @IBOutlet weak var cancelWalkButton: UIButton!
-    @IBOutlet weak var confirmButton: UIButton!
-    
     @IBOutlet weak var loadingImg: UIImageView!
-    
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var emilyEnRoute: UILabel!
+    @IBOutlet weak var arrivedMessage: UILabel!
+    @IBOutlet weak var rendezvousMessage: UILabel!
+    @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var directions1: UILabel!
-    
     @IBOutlet weak var greyChevron: UIButton!
-    @IBOutlet weak var emilyPinButton: UIButton!
     @IBOutlet weak var mapImage: UIImageView!
-
+    @IBOutlet weak var cancelWalkButton: UIButton!
     @IBOutlet weak var currentLocationArrowImage: UIImageView!
     @IBOutlet weak var currentLocationDotImage: UIImageView!
-
+    @IBOutlet weak var emilyPinButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        confirmButton.hidden = true
+        arrivedMessage.hidden = true
         directions1.hidden = false
         greyChevron.hidden = false
-        
+        rendezvousMessage.hidden = false
+        emilyEnRoute.hidden = true
         readyToGoButton.hidden = true
-        walkCompletedButton.hidden = true
-        confirmButton.hidden = true
-        
+        emilyArrivedMsg.hidden = true
+        approvedConfirmation.hidden = true
         loadingImg.hidden = true
+        walkCompletedButton.hidden = true
         currentLocationDotImage.hidden = true
-        messageLabel.text = "Route to meeting point"
-        println("what's happening")
         
-
-        // Approval walk buddy
         activityIndicator.startAnimating()
         magicFog.hidden = false
         waitingForApproval.hidden = false
-        cancelWalkButton.hidden = false
+        //cancelWalkButton.hidden = false
         
         delay(5) {
             UIView.animateWithDuration(0.8, animations: { () -> Void in
@@ -94,7 +89,6 @@ class MeetingPointViewController: UIViewController {
     
     // Clicking ready to go button
     @IBAction func readyToGoButton(sender: AnyObject) {
-        navigationFinalDestination()
         println("readyToGoButton")
     }
     
@@ -110,7 +104,7 @@ class MeetingPointViewController: UIViewController {
         
         directions1.hidden = true
         greyChevron.hidden = true
-        self.messageLabel.text = "looks like you arrived"
+        rendezvousMessage.hidden = false
         loadingImg.hidden = false
         
         loadingDots(1)
@@ -130,12 +124,13 @@ class MeetingPointViewController: UIViewController {
         // We see that you have arrived, confirm loaction button appears, current location arrow changes to dot
         delay(6) {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.rendezvousMessage.hidden = true
                 self.loadingImg.hidden = true
+                self.confirmButton.hidden = false
+                self.arrivedMessage.hidden = false
                 self.currentLocationArrowImage.hidden = true
                 self.currentLocationDotImage.frame.origin = CGPoint(x: 95 , y: 214)
                 self.currentLocationDotImage.hidden = false
-                self.walkCompletedButton.hidden = true
-                self.confirmButton.hidden = false
             })
         }
 
@@ -145,6 +140,10 @@ class MeetingPointViewController: UIViewController {
     func navigationRouteGroup(){
         directions1.hidden = true
         greyChevron.hidden = true
+        rendezvousMessage.hidden = true
+        confirmButton.hidden = true
+        arrivedMessage.hidden = true
+        emilyEnRoute.hidden = false
         loadingImg.hidden = false
         
         loadingDots(1)
@@ -158,26 +157,24 @@ class MeetingPointViewController: UIViewController {
         delay(8) {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.loadingImg.hidden = true
+                self.emilyEnRoute.hidden = true
                 
                 self.readyToGoButton.hidden = false
+                self.emilyArrivedMsg.hidden = false
             })
         }
     }
     
     // We're both here, let's go!
     func navigationFinalDestination(){
-        self.mapImage.image = UIImage(named: "map-final-destinations.png")
+        self.mapImage.image = UIImage(named: "map-final-destination.png")
         
         self.loadingImg.hidden = true
+        self.emilyEnRoute.hidden = true
         
         self.readyToGoButton.hidden = true
+        self.emilyArrivedMsg.hidden = true
         self.emilyPinButton.hidden = true
-        self.walkCompletedButton.hidden = false
-        self.walkCompletedButton.enabled = false
-        self.currentLocationDotImage.hidden = true
-        self.currentLocationArrowImage.hidden = false
-        self.currentLocationArrowImage.frame.origin = CGPoint(x: 165, y: 242 )
-        
         
         
     }
