@@ -193,13 +193,7 @@
                                         <rect key="frame" x="0.0" y="450" width="320" height="118"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walk 0.5 miles South on Mission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bGk-kV-KP5">
-                                                <rect key="frame" x="1" y="42" width="300" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uMj-BI-j0C">
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uMj-BI-j0C">
                                                 <rect key="frame" x="25" y="35" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Confirm Arrival" backgroundImage="button-active">
@@ -212,9 +206,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nHC-5G-Grq" userLabel="Next Instruction Button >">
-                                                <rect key="frame" x="292" y="48" width="12" height="22"/>
+                                                <rect key="frame" x="283" y="48" width="12" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="chevron-grey">
+                                                <state key="normal" title="Walk 0.5 miles South on Mission" image="chevron-grey">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -225,7 +219,7 @@
                                                 <rect key="frame" x="136" y="48" width="49" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZX2-W5-qeH">
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZX2-W5-qeH">
                                                 <rect key="frame" x="25" y="35" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="We're ready to go!" backgroundImage="button-active">
@@ -235,7 +229,7 @@
                                                     <action selector="readyToGoButton:" destination="MEi-PR-3bw" eventType="touchUpInside" id="X48-pN-MkA"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Foe-ez-Xyy">
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Foe-ez-Xyy">
                                                 <rect key="frame" x="25" y="35" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Walk Completed" backgroundImage="button-active">
@@ -243,6 +237,18 @@
                                                 </state>
                                                 <connections>
                                                     <segue destination="Lof-LT-pqB" kind="unwind" unwindAction="walkCompleted:" id="UKV-UX-tD2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ALs-ZJ-CAo">
+                                                <rect key="frame" x="19" y="43" width="276" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Walk 500 ft South on Mission">
+                                                    <color key="titleColor" red="0.20000000000000001" green="0.25882352939999997" blue="0.33725490200000002" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onNextInstruction:" destination="MEi-PR-3bw" eventType="touchUpInside" id="wPh-Ph-aCK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -294,7 +300,7 @@
                         <outlet property="confirmButton" destination="uMj-BI-j0C" id="UKl-5g-n2v"/>
                         <outlet property="currentLocationArrowImage" destination="7uV-Xg-trf" id="O80-jU-I63"/>
                         <outlet property="currentLocationDotImage" destination="8ph-gM-Qh4" id="7pd-Ws-Or1"/>
-                        <outlet property="directions1" destination="bGk-kV-KP5" id="Qnk-e6-rgJ"/>
+                        <outlet property="directions1" destination="ALs-ZJ-CAo" id="9jT-HT-dWu"/>
                         <outlet property="emilyPinButton" destination="D0E-bf-S54" id="KjR-9y-Gg8"/>
                         <outlet property="greyChevron" destination="nHC-5G-Grq" id="RCq-f2-L1b"/>
                         <outlet property="loadingImg" destination="fq8-zv-MnM" id="Ftu-Yq-NRv"/>
