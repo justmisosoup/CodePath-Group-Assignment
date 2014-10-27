@@ -10,8 +10,7 @@ import UIKit
 
 class MeetingPointViewController: UIViewController {
 
-    @IBOutlet weak var approvedConfirmation: UILabel!
-    @IBOutlet weak var waitingForApproval: UILabel!
+    @IBOutlet weak var waitingForApprovalLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var magicFog: UIView!
 
@@ -43,10 +42,9 @@ class MeetingPointViewController: UIViewController {
         mapImage.image = UIImage(named: "map-meeting-point.png")
         loadingImg.hidden = true
         currentLocationDotImage.hidden = true
-        approvedConfirmation.hidden = true
         activityIndicator.startAnimating()
         magicFog.hidden = false
-        waitingForApproval.hidden = false
+        waitingForApprovalLabel.hidden = false
         navigate0.alpha = 1
         navigate1.alpha = 0
         navigate2.alpha = 0
@@ -58,8 +56,7 @@ class MeetingPointViewController: UIViewController {
         delay(5) {
             UIView.animateWithDuration(0.8, animations: { () -> Void in
                 self.activityIndicator.stopAnimating()
-                self.approvedConfirmation.hidden = false
-                self.waitingForApproval.hidden = true
+                self.waitingForApprovalLabel.text = "Emily approved your request!"
                 self.activityIndicator.hidden = true
             })
             
