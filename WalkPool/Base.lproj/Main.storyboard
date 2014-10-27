@@ -179,29 +179,8 @@
                                         <rect key="frame" x="0.0" y="389" width="320" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We see you have arrived!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ILQ-So-ZET">
-                                                <rect key="frame" x="8" y="15" width="300" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting route to meeting point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JaD-Xi-JI4" userLabel="Starting route to meeting point...">
                                                 <rect key="frame" x="8" y="15" width="300" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emily is still en route..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f0L-vt-oUH">
-                                                <rect key="frame" x="18" y="16" width="300" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emily has arrived!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5jX-PR-Lo2">
-                                                <rect key="frame" x="10" y="15" width="300" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -311,21 +290,18 @@
                     <connections>
                         <outlet property="activityIndicator" destination="REv-6n-PqZ" id="zce-Jm-CmD"/>
                         <outlet property="approvedConfirmation" destination="KTD-5v-RLQ" id="Pfz-Tg-Kbh"/>
-                        <outlet property="arrivedMessage" destination="ILQ-So-ZET" id="VoD-gG-Ybi"/>
                         <outlet property="cancelWalkButton" destination="Foe-ez-Xyy" id="KNu-F6-vl7"/>
                         <outlet property="confirmButton" destination="uMj-BI-j0C" id="UKl-5g-n2v"/>
                         <outlet property="currentLocationArrowImage" destination="7uV-Xg-trf" id="O80-jU-I63"/>
                         <outlet property="currentLocationDotImage" destination="8ph-gM-Qh4" id="7pd-Ws-Or1"/>
                         <outlet property="directions1" destination="bGk-kV-KP5" id="Qnk-e6-rgJ"/>
-                        <outlet property="emilyArrivedMsg" destination="5jX-PR-Lo2" id="Gmu-9A-xzf"/>
-                        <outlet property="emilyEnRoute" destination="f0L-vt-oUH" id="TK2-ik-aRI"/>
                         <outlet property="emilyPinButton" destination="D0E-bf-S54" id="KjR-9y-Gg8"/>
                         <outlet property="greyChevron" destination="nHC-5G-Grq" id="RCq-f2-L1b"/>
                         <outlet property="loadingImg" destination="fq8-zv-MnM" id="Ftu-Yq-NRv"/>
                         <outlet property="magicFog" destination="dwM-Ny-UsG" id="h8a-qn-SJn"/>
                         <outlet property="mapImage" destination="iJM-2u-pCK" id="7sA-x2-hyl"/>
+                        <outlet property="messageLabel" destination="JaD-Xi-JI4" id="1z9-vt-l58"/>
                         <outlet property="readyToGoButton" destination="ZX2-W5-qeH" id="cFQ-Yk-rhS"/>
-                        <outlet property="rendezvousMessage" destination="JaD-Xi-JI4" id="hUP-w5-Evf"/>
                         <outlet property="waitingForApproval" destination="vfX-hh-LUz" id="oPI-AV-vua"/>
                         <outlet property="walkCompletedButton" destination="Foe-ez-Xyy" id="JJ8-tz-agm"/>
                     </connections>
