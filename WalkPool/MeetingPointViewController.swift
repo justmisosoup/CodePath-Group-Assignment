@@ -78,12 +78,11 @@ class MeetingPointViewController: UIViewController {
     
     // Navigate to meeting point
     @IBAction func onNavigate0(sender: AnyObject) {
-
+        println("onNextInstruction")
         self.mapImage.image = UIImage(named: "map-meeting-point.png")
         loadingImg.hidden = true
         navigate0.alpha = 1
         navigate0.enabled = false
-        //loadingDots(1)
         
         // Animate arrow to meeting point
         UIView.animateWithDuration(6, animations: { () -> Void in
@@ -110,7 +109,6 @@ class MeetingPointViewController: UIViewController {
             })
         }
         
-        println("onNextInstruction")
     }
     
     // Clicking confirm arrival
@@ -148,7 +146,6 @@ class MeetingPointViewController: UIViewController {
         self.loadingImg.hidden = true
         self.readyToGoButton.hidden = true
         self.emilyPinButton.hidden = true
-        self.walkCompletedButton.enabled = false
         self.currentLocationDotImage.hidden = true
         self.currentLocationArrowImage.hidden = false
         self.currentLocationArrowImage.frame.origin = CGPoint(x: 165, y: 242 )
@@ -223,7 +220,6 @@ class MeetingPointViewController: UIViewController {
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.walkCompletedButton.alpha = 1
                 self.navigate3.alpha = 0
-                self.walkCompletedButton.enabled = true
                 self.messageLabel.text = "You have arrived!"
             })
         }
