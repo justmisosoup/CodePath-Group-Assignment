@@ -21,11 +21,12 @@ class MeetingPointViewController: UIViewController {
     @IBOutlet weak var loadingImg: UIImageView!
     
     @IBOutlet weak var messageLabel: UILabel!
-    
-    
     @IBOutlet weak var confirmButton: UIButton!
-    @IBOutlet weak var directions1: UIButton!
-    @IBOutlet weak var greyChevron: UIButton!
+    @IBOutlet weak var navigate0: UIButton!
+    @IBOutlet weak var navigate1: UIButton!
+    @IBOutlet weak var navigate2: UIButton!
+    @IBOutlet weak var navigate3: UIButton!
+    
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var cancelWalkButton: UIButton!
     @IBOutlet weak var currentLocationArrowImage: UIImageView!
@@ -39,15 +40,17 @@ class MeetingPointViewController: UIViewController {
         readyToGoButton.alpha = 0
         cancelWalkButton.alpha = 0
         messageLabel.text = "Route to meeting point"
-        self.mapImage.image = UIImage(named: "map-meeting-point.png")
-        directions1.hidden = false
-        greyChevron.hidden = false
+        mapImage.image = UIImage(named: "map-meeting-point.png")
         loadingImg.hidden = true
         currentLocationDotImage.hidden = true
         approvedConfirmation.hidden = true
         activityIndicator.startAnimating()
         magicFog.hidden = false
         waitingForApproval.hidden = false
+        navigate0.alpha = 1
+        navigate1.alpha = 0
+        navigate2.alpha = 0
+        navigate3.alpha = 0
         
 
         
@@ -76,38 +79,14 @@ class MeetingPointViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // Clicking chevron
-    @IBAction func onNextInstruction(sender: AnyObject) {
-        navigationArrivedMap()
-        println("onNextInstruction")
-    }
-    
-    // Clicking confirm arrival
-    @IBAction func confirmArrivalButton(sender: AnyObject) {
-        navigationRouteGroup()
-        println("confirmArrivalButton")
-    }
-    
-    // Clicking ready to go button
-    @IBAction func readyToGoButton(sender: AnyObject) {
-        navigationFinalDestination()
-        println("readyToGoButton")
-    }
-    
-    // Loading dots
-    func loadingDots(duration: NSTimeInterval){
-        var imagesLoading = UIImage.animatedImageNamed("loading-", duration: duration)
-        loadingImg.image = imagesLoading
-    }
-    
-    // Show loading image and animate current location arrow to meeting point, confirm arrival button appears
-    func navigationArrivedMap(){
+    // Navigate to meeting point
+    @IBAction func onNavigate0(sender: AnyObject) {
+
         self.mapImage.image = UIImage(named: "map-meeting-point.png")
-        directions1.hidden = true
-        greyChevron.hidden = true
-        loadingImg.hidden = false
-        
-        loadingDots(1)
+        loadingImg.hidden = true
+        navigate0.alpha = 1
+        navigate0.enabled = false
+        //loadingDots(1)
         
         // Animate arrow to meeting point
         UIView.animateWithDuration(6, animations: { () -> Void in
@@ -126,20 +105,23 @@ class MeetingPointViewController: UIViewController {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.messageLabel.text = "We see that you have arrived"
                 self.loadingImg.hidden = true
+                self.navigate0.alpha = 0
                 self.confirmButton.alpha = 1
                 self.currentLocationArrowImage.hidden = true
                 self.currentLocationDotImage.frame.origin = CGPoint(x: 95 , y: 214)
                 self.currentLocationDotImage.hidden = false
             })
         }
-
+        
+        println("onNextInstruction")
     }
     
-    // You have arrived but waiting for Emily
-    func navigationRouteGroup(){
+    // Clicking confirm arrival
+    @IBAction func confirmArrivalButton(sender: AnyObject) {
+        
+        // You have arrived but waiting for Emily
         self.messageLabel.text = "Emily is still en route"
-        directions1.hidden = true
-        greyChevron.hidden = true
+        navigate1.alpha = 0
         confirmButton.alpha = 0
         loadingImg.hidden = false
         
@@ -158,10 +140,12 @@ class MeetingPointViewController: UIViewController {
                 self.messageLabel.text = "Emily has arrived!"
             })
         }
+
+        println("confirmArrivalButton")
     }
     
-    // We're both here, let's go!
-    func navigationFinalDestination(){
+    // Clicking ready to go button
+    @IBAction func readyToGoButton(sender: AnyObject) {
         self.mapImage.image = UIImage(named: "map-final-destinations.png")
         self.messageLabel.text = "Route to 989 Market Street"
         self.loadingImg.hidden = true
@@ -172,11 +156,53 @@ class MeetingPointViewController: UIViewController {
         self.currentLocationArrowImage.hidden = false
         self.currentLocationArrowImage.frame.origin = CGPoint(x: 165, y: 242 )
         walkCompletedButton.alpha = 0
+        navigate1.alpha = 1
+
+        println("readyToGoButton")
+    }
+    
+    // -------------
+    // Navigation to final destination
+    // -------------
+    // Clean up redundancy later
+    
+    @IBAction func onNavigate1(sender: AnyObject) {
+        navigate1.enabled = false
         
-        // Animate arrow to 6th street
+        // Animate arrow to the corner of Mission and 6th
         UIView.animateWithDuration(6, animations: { () -> Void in
-            self.currentLocationArrowImage.frame.origin = CGPoint(x: 117, y: 276 )
+            self.currentLocationArrowImage.frame.origin = CGPoint(x: 110, y: 276 )
         })
+        
+        delay(5) {
+            UIView.animateWithDuration(2, animations: { () -> Void in
+                self.navigate1.alpha = 0
+                self.navigate2.alpha = 1
+            })
+        }
+        
+        // Rotate arrow
+        delay(6) {
+            UIView.animateWithDuration(1, animations: { () -> Void in
+                self.currentLocationArrowImage.transform = CGAffineTransformRotate(self.currentLocationArrowImage.transform, (CGFloat(90 * M_PI / 180)))
+            })
+        }
+    }
+    
+    @IBAction func onNavigate2(sender: AnyObject) {
+        navigate2.enabled = false
+        
+        // Animate arrow to corner of 6th and Market
+        UIView.animateWithDuration(6, animations: { () -> Void in
+            self.currentLocationArrowImage.frame.origin = CGPoint(x: 26, y: 188 )
+        })
+        
+        delay(5) {
+            UIView.animateWithDuration(2, animations: { () -> Void in
+                self.navigate2.alpha = 0
+                self.navigate3.alpha = 1
+            })
+        }
         
         // Rotate arrow
         delay(6) {
@@ -185,19 +211,40 @@ class MeetingPointViewController: UIViewController {
             })
         }
         
+    }
+    
+    @IBAction func onNavigate3(sender: AnyObject) {
+        navigate3.enabled = false
         
-
+        // Animate arrow to corner of 6th and Market
+        UIView.animateWithDuration(2, animations: { () -> Void in
+            self.currentLocationArrowImage.frame.origin = CGPoint(x: 47, y: 172 )
+            self.navigate2.alpha = 0
+        })
+        
+        delay(2) {
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.walkCompletedButton.alpha = 1
+                self.navigate3.alpha = 0
+                self.walkCompletedButton.enabled = true
+                self.messageLabel.text = "You have arrived!"
+            })
+        }
         
     }
-
     
+    // Loading dots
+    func loadingDots(duration: NSTimeInterval){
+        var imagesLoading = UIImage.animatedImageNamed("loading-", duration: duration)
+        loadingImg.image = imagesLoading
+    }
+
     @IBAction func cancelWalkButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
         println("cancel walk button")
 
     }
     
-    // Doesn't seem to be working
     @IBAction func onDismissDirections(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
         println("on dismiss directions")

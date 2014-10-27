@@ -171,7 +171,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-meeting-point" id="iJM-2u-pCK">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-final-destinations" id="iJM-2u-pCK">
                                         <rect key="frame" x="0.0" y="70" width="320" height="319"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -205,20 +205,6 @@
                                                     <action selector="onFind:" destination="cgA-Ko-aFB" eventType="touchUpInside" id="SU4-WV-dof"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nHC-5G-Grq" userLabel="Next Instruction Button >">
-                                                <rect key="frame" x="283" y="48" width="12" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Walk 0.5 miles South on Mission" image="chevron-grey">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onNextInstruction:" destination="MEi-PR-3bw" eventType="touchUpInside" id="3mf-Vy-Tgn"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-1" id="fq8-zv-MnM">
-                                                <rect key="frame" x="136" y="48" width="49" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZX2-W5-qeH">
                                                 <rect key="frame" x="25" y="35" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -239,18 +225,58 @@
                                                     <segue destination="Lof-LT-pqB" kind="unwind" unwindAction="walkCompleted:" id="UKV-UX-tD2"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ALs-ZJ-CAo">
-                                                <rect key="frame" x="19" y="43" width="276" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="tailTruncation" id="ALs-ZJ-CAo" userLabel="navigate-0-meeting-point">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Walk 500 ft South on Mission">
+                                                <state key="normal" backgroundImage="navigation-steps-1">
                                                     <color key="titleColor" red="0.20000000000000001" green="0.25882352939999997" blue="0.33725490200000002" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="onNextInstruction:" destination="MEi-PR-3bw" eventType="touchUpInside" id="wPh-Ph-aCK"/>
+                                                    <action selector="onNavigate0:" destination="MEi-PR-3bw" eventType="touchUpInside" id="LQr-nH-jTR"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="tailTruncation" id="zKN-7J-7XG" userLabel="navigate-1-6th-st">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" backgroundImage="navigation-steps-1">
+                                                    <color key="titleColor" red="0.20000000000000001" green="0.25882352939999997" blue="0.33725490200000002" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onNavigate1:" destination="MEi-PR-3bw" eventType="touchUpInside" id="vK2-hO-zzo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="tailTruncation" id="WjL-9X-xWj" userLabel="navigate-2-market-st">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" backgroundImage="navigation-steps-2">
+                                                    <color key="titleColor" red="0.20000000000000001" green="0.25882352939999997" blue="0.33725490200000002" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onNavigate2:" destination="MEi-PR-3bw" eventType="touchUpInside" id="0uf-ka-z1w"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="tailTruncation" id="F7u-yo-bf3" userLabel="navigate-3-989">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" backgroundImage="navigation-steps-3">
+                                                    <color key="titleColor" red="0.20000000000000001" green="0.25882352939999997" blue="0.33725490200000002" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onNavigate3:" destination="MEi-PR-3bw" eventType="touchUpInside" id="3it-gX-ZqF"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-1" id="fq8-zv-MnM">
+                                                <rect key="frame" x="136" y="48" width="49" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </view>
@@ -300,13 +326,15 @@
                         <outlet property="confirmButton" destination="uMj-BI-j0C" id="UKl-5g-n2v"/>
                         <outlet property="currentLocationArrowImage" destination="7uV-Xg-trf" id="O80-jU-I63"/>
                         <outlet property="currentLocationDotImage" destination="8ph-gM-Qh4" id="7pd-Ws-Or1"/>
-                        <outlet property="directions1" destination="ALs-ZJ-CAo" id="9jT-HT-dWu"/>
                         <outlet property="emilyPinButton" destination="D0E-bf-S54" id="KjR-9y-Gg8"/>
-                        <outlet property="greyChevron" destination="nHC-5G-Grq" id="RCq-f2-L1b"/>
                         <outlet property="loadingImg" destination="fq8-zv-MnM" id="Ftu-Yq-NRv"/>
                         <outlet property="magicFog" destination="dwM-Ny-UsG" id="h8a-qn-SJn"/>
                         <outlet property="mapImage" destination="iJM-2u-pCK" id="7sA-x2-hyl"/>
                         <outlet property="messageLabel" destination="JaD-Xi-JI4" id="1z9-vt-l58"/>
+                        <outlet property="navigate0" destination="ALs-ZJ-CAo" id="iwv-uv-gOp"/>
+                        <outlet property="navigate1" destination="zKN-7J-7XG" id="8oH-O7-mzT"/>
+                        <outlet property="navigate2" destination="WjL-9X-xWj" id="HKD-Mg-SAv"/>
+                        <outlet property="navigate3" destination="F7u-yo-bf3" id="c81-MB-2JO"/>
                         <outlet property="readyToGoButton" destination="ZX2-W5-qeH" id="cFQ-Yk-rhS"/>
                         <outlet property="waitingForApproval" destination="vfX-hh-LUz" id="oPI-AV-vua"/>
                         <outlet property="walkCompletedButton" destination="Foe-ez-Xyy" id="JJ8-tz-agm"/>
@@ -784,7 +812,6 @@
         <image name="avatar" width="36" height="36"/>
         <image name="button-active" width="270" height="48"/>
         <image name="button-pressed" width="270" height="48"/>
-        <image name="chevron-grey" width="12" height="21"/>
         <image name="close" width="14" height="14"/>
         <image name="current-location-arrow" width="100" height="100"/>
         <image name="current-location-dot" width="100" height="100"/>
@@ -794,8 +821,12 @@
         <image name="login-form" width="270" height="91"/>
         <image name="logo" width="165" height="39"/>
         <image name="map-current-location" width="320" height="319"/>
+        <image name="map-final-destinations" width="320" height="319"/>
         <image name="map-meeting-point" width="320" height="319"/>
         <image name="menu" width="20" height="15"/>
+        <image name="navigation-steps-1" width="320" height="118"/>
+        <image name="navigation-steps-2" width="320" height="118"/>
+        <image name="navigation-steps-3" width="320" height="118"/>
         <image name="pin" width="12" height="17"/>
         <image name="pin-emily" width="57" height="61"/>
         <image name="pin-james" width="57" height="61"/>
