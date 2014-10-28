@@ -30,6 +30,7 @@ class MeetingPointViewController: UIViewController {
     @IBOutlet weak var cancelWalkButton: UIButton!
     @IBOutlet weak var currentLocationArrowImage: UIImageView!
     @IBOutlet weak var currentLocationDotImage: UIImageView!
+    @IBOutlet weak var currentLocationDotImage2: UIImageView!
     @IBOutlet weak var emilyPinButton: UIButton!
     
     override func viewDidLoad() {
@@ -42,6 +43,7 @@ class MeetingPointViewController: UIViewController {
         mapImage.image = UIImage(named: "map-meeting-point.png")
         loadingImg.hidden = true
         currentLocationDotImage.hidden = true
+        currentLocationDotImage2.hidden = true
         activityIndicator.startAnimating()
         magicFog.hidden = false
         waitingForApprovalLabel.hidden = false
@@ -86,25 +88,25 @@ class MeetingPointViewController: UIViewController {
         
         // Animate arrow to meeting point
         UIView.animateWithDuration(6, animations: { () -> Void in
-            self.currentLocationArrowImage.frame.origin = CGPoint(x: 95 , y: 214)
+            self.currentLocationArrowImage.frame.origin = CGPoint(x: 87 , y: 206)
         })
         
         // Animate Emily to cross the street
-        delay(3) {
+        delay(2) {
             UIView.animateWithDuration(3, animations: { () -> Void in
-                self.emilyPinButton.frame.origin = CGPoint(x: 63, y: 265 )
+                self.emilyPinButton.frame.origin = CGPoint(x: 63, y: 250 )
             })
         }
         
         // We see that you have arrived, confirm loaction button appears, current location arrow changes to dot
-        delay(6) {
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
+        delay(5) {
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.messageLabel.text = "We see that you have arrived"
                 self.loadingImg.hidden = true
                 self.navigate0.alpha = 0
                 self.confirmButton.alpha = 1
                 self.currentLocationArrowImage.hidden = true
-                self.currentLocationDotImage.frame.origin = CGPoint(x: 95 , y: 214)
+                self.currentLocationDotImage.frame.origin = CGPoint(x: 87 , y: 205)
                 self.currentLocationDotImage.hidden = false
             })
         }
@@ -124,7 +126,7 @@ class MeetingPointViewController: UIViewController {
         
         // Animate Emily to cross the street
         UIView.animateWithDuration(6, animations: { () -> Void in
-            self.emilyPinButton.frame.origin = CGPoint(x: 124, y: 209 )
+            self.emilyPinButton.frame.origin = CGPoint(x: 116, y: 200 )
         })
         
         // Emily has arrived
@@ -148,7 +150,7 @@ class MeetingPointViewController: UIViewController {
         self.emilyPinButton.hidden = true
         self.currentLocationDotImage.hidden = true
         self.currentLocationArrowImage.hidden = false
-        self.currentLocationArrowImage.frame.origin = CGPoint(x: 165, y: 242 )
+        self.currentLocationArrowImage.frame.origin = CGPoint(x: 156, y: 234 )
         walkCompletedButton.alpha = 0
         navigate1.alpha = 1
 
@@ -177,7 +179,7 @@ class MeetingPointViewController: UIViewController {
         
         // Rotate arrow
         delay(6) {
-            UIView.animateWithDuration(1, animations: { () -> Void in
+            UIView.animateWithDuration(0.6, animations: { () -> Void in
                 self.currentLocationArrowImage.transform = CGAffineTransformRotate(self.currentLocationArrowImage.transform, (CGFloat(90 * M_PI / 180)))
             })
         }
@@ -200,7 +202,7 @@ class MeetingPointViewController: UIViewController {
         
         // Rotate arrow
         delay(6) {
-            UIView.animateWithDuration(1, animations: { () -> Void in
+            UIView.animateWithDuration(0.6, animations: { () -> Void in
                 self.currentLocationArrowImage.transform = CGAffineTransformRotate(self.currentLocationArrowImage.transform, (CGFloat(90 * M_PI / 180)))
             })
         }
@@ -218,6 +220,8 @@ class MeetingPointViewController: UIViewController {
         
         delay(2) {
             UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.currentLocationDotImage2.hidden = false
+                self.currentLocationArrowImage.hidden = true
                 self.walkCompletedButton.alpha = 1
                 self.navigate3.alpha = 0
                 self.messageLabel.text = "You have arrived!"
