@@ -11,11 +11,21 @@ import UIKit
 class MatchDetailViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
     
+    @IBOutlet weak var walkBuddyScore: UILabel!
+    @IBOutlet weak var aboutMeText: UILabel!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var buddyScrollView: UIScrollView!
+    
+    let blue = UIColor(red: 90/255, green: 181/255, blue: 211/255, alpha: 1)
+    let gray = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         buddyScrollView.contentSize = CGSize(width: 320, height: 490)
+        
+        aboutMeText.textColor = blue
+        walkBuddyScore.textColor = blue
+        
         // Do any additional setup after loading the view.
         
     }
