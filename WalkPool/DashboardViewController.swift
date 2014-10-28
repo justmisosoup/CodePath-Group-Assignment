@@ -54,9 +54,33 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     
     }
     
+    
+//    func alertView(View: UIAlertView!, clickedButtonAtIndex buttonIndex: Int){
+//    
+//        switch buttonIndex{
+//            
+//        case 1:
+//                NSLog("Great");
+//        break;
+//            
+//        case 0:
+//            NSLog("Not so Great");
+//        break;
+//            
+//        default:
+//            NSLog("No Opinion");
+//        break;
+//            
+//        }
+//    }
+    
+    @IBAction func onTapDismissKeyboard(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     @IBAction func walkCompleted(sender: UIStoryboardSegue) {
         var sourceViewController = sender.sourceViewController as UIViewController
-
+        
         if let checkMeetingPointViewController = sourceViewController as? MeetingPointViewController {
             println("MEETING POINT IS COMING BACK")
             
@@ -64,8 +88,8 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
             startingPoint.text = "Current Location"
             currentLocationMap()
             showAlert()
-
-            }
+            
+        }
     }
     
     func showAlert(){
@@ -81,39 +105,17 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
         
         createAccountErrorAlert.show()
     }
-    
-    func alertView(View: UIAlertView!, clickedButtonAtIndex buttonIndex: Int){
-    
-        switch buttonIndex{
-            
-        case 1:
-                NSLog("Great");
-        break;
-            
-        case 0:
-            NSLog("Not so Great");
-        break;
-            
-        default:
-            NSLog("No Opinion");
-        break;
-            
-        }
-    }
-    
-    @IBAction func onTapDismissKeyboard(sender: UITapGestureRecognizer) {
-        view.endEditing(true)
-    }
+
   
     @IBAction func onFind(sender: AnyObject) {
-        var alertView = UIAlertView(title: "Searching...", message: nil, delegate: self, cancelButtonTitle: nil)
-        alertView.show()
+        var alertView2 = UIAlertView(title: "Searching...", message: nil, delegate: self, cancelButtonTitle: nil)
+        alertView2.show()
         
         delay(1, closure: { () -> () in
             
             // Locations are Correct! Will return images
             if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text == "989 Market Street") {
-                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                alertView2.dismissWithClickedButtonIndex(0, animated: true)
                 
                 self.destintationMapMatches()
                 
@@ -121,7 +123,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
                 
             // Destination is Empty! Will return images
             else if(self.startingPoint.text == "Current Location" ) && (self.destinationPoint.text.isEmpty) {
-                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                alertView2.dismissWithClickedButtonIndex(0, animated: true)
                 UIAlertView(title: "Whoops!", message: "In order to find walking buddies, you need to indicate a destination.", delegate: nil, cancelButtonTitle: "Try Again...").show()
                 
                 self.currentLocationMap()
@@ -131,7 +133,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
             // Destination is Empty! Will not return results
             
             else if(self.startingPoint.text.isEmpty ) && (self.destinationPoint.text == "989 Market Street") {
-                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                alertView2.dismissWithClickedButtonIndex(0, animated: true)
                 self.startingPoint.text = "Current Location"
                 
                 self.destintationMapMatches()
@@ -140,7 +142,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
                 
              // Locations are Wrong! Will not return results
             else {
-                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                alertView2.dismissWithClickedButtonIndex(0, animated: true)
                 UIAlertView(title: "Yikes!", message: "Where do you think you are? Your destination does not exist!", delegate: nil, cancelButtonTitle: "Try Again...").show()
                 
                 self.currentLocationMap()

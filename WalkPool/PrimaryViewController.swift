@@ -15,7 +15,7 @@ class PrimaryViewController: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     
     var menuViewController: UIViewController!
-    var dashboardViewController: UIViewController!
+    var dashboardViewController: DashboardViewController!
     var accountViewController:UIViewController!
     var matchDetailViewController:UIViewController!
     var imageCenter: CGPoint!
@@ -25,21 +25,27 @@ class PrimaryViewController: UIViewController {
 
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        dashboardViewController = storyboard.instantiateViewControllerWithIdentifier("DashboardViewController") as UIViewController
+        dashboardViewController = storyboard.instantiateViewControllerWithIdentifier("DashboardViewController") as DashboardViewController
         menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as UIViewController
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
 //        matchDetailViewController = storyboard.instantiateViewControllerWithIdentifier("MatchDetailViewController") as UIViewController
         
-
-                
+        
+        menuViewController.willMoveToParentViewController(self)
+        self.addChildViewController(menuViewController)
         menuContainerView.addSubview(menuViewController.view)
+        menuViewController.didMoveToParentViewController(self)
+        
+        dashboardViewController.willMoveToParentViewController(self)
+        self.addChildViewController(dashboardViewController)
         dashboardContainerView.addSubview(dashboardViewController.view)
+        dashboardViewController.didMoveToParentViewController(self)
         
         menuContainerView.transform = CGAffineTransformMakeScale(0.9, 0.9)
 
         
     }
-
+    
 
     @IBAction func onPanRevealMenu(gestureRecognizer: UIPanGestureRecognizer) {
         
