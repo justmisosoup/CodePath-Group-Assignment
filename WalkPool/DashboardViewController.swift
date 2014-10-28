@@ -26,9 +26,6 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     var matchDetailViewController: UIViewController!
     var isPresenting: Bool = true
     
-//    var goodAlert = UIAlertView(title: "Thanks!", message: "We appreciate your feedback!", delegate: self, cancelButtonTitle: nil, otherButtonTitles: nil)
-
-    
     let blue = UIColor(red: 90/255, green: 181/255, blue: 211/255, alpha: 1)
     let gray = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
     
@@ -54,56 +51,8 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     
     }
     
-    
-//    func alertView(View: UIAlertView!, clickedButtonAtIndex buttonIndex: Int){
-//    
-//        switch buttonIndex{
-//            
-//        case 1:
-//                NSLog("Great");
-//        break;
-//            
-//        case 0:
-//            NSLog("Not so Great");
-//        break;
-//            
-//        default:
-//            NSLog("No Opinion");
-//        break;
-//            
-//        }
-//    }
-    
     @IBAction func onTapDismissKeyboard(sender: UITapGestureRecognizer) {
         view.endEditing(true)
-    }
-    
-    @IBAction func walkCompleted(sender: UIStoryboardSegue) {
-        var sourceViewController = sender.sourceViewController as UIViewController
-        
-        if let checkMeetingPointViewController = sourceViewController as? MeetingPointViewController {
-            println("MEETING POINT IS COMING BACK")
-            
-            destinationPoint.text = ""
-            startingPoint.text = "Current Location"
-            currentLocationMap()
-            showAlert()
-            
-        }
-    }
-    
-    func showAlert(){
-        var createAccountErrorAlert: UIAlertView = UIAlertView()
-        
-        createAccountErrorAlert.delegate = self
-        
-        createAccountErrorAlert.title = "How would you rate Emily?"
-        createAccountErrorAlert.message = "We'd like to know so we can keep other Walkpoolers safe and happy!"
-        createAccountErrorAlert.addButtonWithTitle("Great")
-        createAccountErrorAlert.addButtonWithTitle("Not so Great")
-        createAccountErrorAlert.addButtonWithTitle("No Opinion")
-        
-        createAccountErrorAlert.show()
     }
 
   
@@ -181,7 +130,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
             println("intro segue")
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
                 toViewController.view.alpha = 1
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)

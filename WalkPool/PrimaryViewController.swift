@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PrimaryViewController: UIViewController {
+class PrimaryViewController: UIViewController, UIAlertViewDelegate {
 
     @IBOutlet weak var dashboardContainerView: UIView!
     @IBOutlet weak var menuContainerView: UIView!
@@ -43,9 +43,75 @@ class PrimaryViewController: UIViewController {
         
         menuContainerView.transform = CGAffineTransformMakeScale(0.9, 0.9)
 
-        
     }
     
+
+    
+    @IBAction func walkCompleted(sender: UIStoryboardSegue) {
+        var sourceViewController = sender.sourceViewController as UIViewController
+        
+        if let checkMeetingPointViewController = sourceViewController as? MeetingPointViewController {
+            dismissViewControllerAnimated(true, completion: nil)
+            println("MEETING POINT IS COMING BACK")
+            
+            dashboardViewController.destinationPoint.text = ""
+            dashboardViewController.startingPoint.text = "Current Location"
+            dashboardViewController.currentLocationMap()
+            showAlert()
+        }
+    }
+    
+    func showAlert(){
+        var rateUser: UIAlertView = UIAlertView()
+        
+        rateUser.delegate = self
+        
+        rateUser.title = "How would you rate Emily?"
+        rateUser.message = "We'd like to know so we can keep other Walkpoolers safe and happy!"
+        rateUser.addButtonWithTitle("Great")
+        rateUser.addButtonWithTitle("Not so Great")
+        rateUser.addButtonWithTitle("No Opinion")
+        
+        rateUser.show()
+    }
+    
+    var confirmationAlert = UIAlertView(title: "Thanks for rating Emily!", message: nil, delegate: nil, cancelButtonTitle:  nil)
+    
+        func alertView(View: UIAlertView!, clickedButtonAtIndex buttonIndex: Int){
+    
+            switch buttonIndex{
+    
+            case 0:
+                    NSLog("Great");
+                    confirmationAlert.show()
+                    
+                    delay(1.5) {
+                        self.confirmationAlert.dismissWithClickedButtonIndex(0, animated: true)
+                    }
+            break;
+            case 1:
+                NSLog("Not so Great");
+                confirmationAlert.show()
+                
+                delay(1.5) {
+                    self.confirmationAlert.dismissWithClickedButtonIndex(0, animated: true)
+                }
+            break;
+    
+            case 2:
+                NSLog("No Opinion");
+                confirmationAlert.show()
+                
+                delay(2) {
+                    self.confirmationAlert.dismissWithClickedButtonIndex(0, animated: true)
+                }
+                
+            break;
+            
+            default:
+                println("durp")
+            }
+        }
 
     @IBAction func onPanRevealMenu(gestureRecognizer: UIPanGestureRecognizer) {
         
@@ -99,6 +165,15 @@ class PrimaryViewController: UIViewController {
     func convertValue(value: CGFloat, r1Min: CGFloat, r1Max: CGFloat, r2Min: CGFloat, r2Max: CGFloat) -> CGFloat {
         var ratio = (r2Max - r2Min) / (r1Max - r1Min)
         return value * ratio + r2Min - r1Min * ratio
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
     
     
