@@ -11,6 +11,7 @@ import UIKit
 class MatchDetailViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var walkBuddyScore: UILabel!
     @IBOutlet weak var aboutMeText: UILabel!
     @IBOutlet weak var profileView: UIView!
@@ -25,6 +26,7 @@ class MatchDetailViewController: UIViewController, UIViewControllerTransitioning
         
         aboutMeText.textColor = blue
         walkBuddyScore.textColor = blue
+        nameLabel.textColor = gray
         
         // Do any additional setup after loading the view.
         

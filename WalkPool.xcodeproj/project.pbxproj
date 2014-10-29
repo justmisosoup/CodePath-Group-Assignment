@@ -16,6 +16,7 @@
 		02570E1419EE17690008C36B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02570E1319EE17690008C36B /* MenuViewController.swift */; };
 		02570E1619EE1C850008C36B /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02570E1519EE1C850008C36B /* PrimaryViewController.swift */; };
 		0272F3E819E60BAC0016B2B9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272F3E719E60BAC0016B2B9 /* LogInViewController.swift */; };
+		02D4F3DC1A005C1F0043306D /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4F3DB1A005C1F0043306D /* RatingViewController.swift */; };
 		02DC70C419E37BE400DDE103 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC70C319E37BE400DDE103 /* DashboardViewController.swift */; };
 		02F3425D19F8C37F0007AEC2 /* MeetingPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3425C19F8C37F0007AEC2 /* MeetingPointViewController.swift */; };
 		4094FB0C19F47466009DFC6C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4094FB0B19F47466009DFC6C /* CoreLocation.framework */; };
@@ -48,6 +49,7 @@
 		02570E1319EE17690008C36B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		02570E1519EE1C850008C36B /* PrimaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
 		0272F3E719E60BAC0016B2B9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		02D4F3DB1A005C1F0043306D /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		02DC70C319E37BE400DDE103 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		02F3425C19F8C37F0007AEC2 /* MeetingPointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingPointViewController.swift; sourceTree = "<group>"; };
 		4094FB0B19F47466009DFC6C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -102,6 +104,7 @@
 				024A2D4E19DCBC8B0074E7FE /* AppDelegate.swift */,
 				024A2D5019DCBC8B0074E7FE /* ViewController.swift */,
 				024A2D5219DCBC8B0074E7FE /* Main.storyboard */,
+				02D4F3DB1A005C1F0043306D /* RatingViewController.swift */,
 				4094FB0F19F47B13009DFC6C /* AccountViewController.swift */,
 				02F3425C19F8C37F0007AEC2 /* MeetingPointViewController.swift */,
 				02570E1319EE17690008C36B /* MenuViewController.swift */,
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0272F3E819E60BAC0016B2B9 /* LogInViewController.swift in Sources */,
+				02D4F3DC1A005C1F0043306D /* RatingViewController.swift in Sources */,
 				40F1F89719F6367D00A741DA /* MatchDetailViewController.swift in Sources */,
 				02F3425D19F8C37F0007AEC2 /* MeetingPointViewController.swift in Sources */,
 				02570E1619EE1C850008C36B /* PrimaryViewController.swift in Sources */,

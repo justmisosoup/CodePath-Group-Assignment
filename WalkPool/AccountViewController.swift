@@ -9,6 +9,7 @@
 import UIKit
 
 class AccountViewController: UIViewController {
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var aboutMe: UILabel!
@@ -30,7 +31,7 @@ class AccountViewController: UIViewController {
         buddyScore.textColor = blue
         buddyRating.textColor = gray
 
-        scrollView.contentSize = containerView.frame.size
+        scrollView.contentSize = CGSize(width: 320, height: 324)
     }
 
     override func didReceiveMemoryWarning() {
