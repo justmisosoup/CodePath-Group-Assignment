@@ -10,6 +10,7 @@ import UIKit
 
 class RatingViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var ratingScore: UILabel!
     @IBOutlet weak var headerRatings: UILabel!
     @IBOutlet weak var overallScore: UILabel!
@@ -21,6 +22,8 @@ class RatingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        scrollView.contentSize = CGSize(width: 320, height: 324)
 
        ratingScore.textColor = gray
        goodRatings.textColor = blue
