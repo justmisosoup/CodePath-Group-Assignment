@@ -76,7 +76,7 @@ class SearchLocationViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell = locationTableView.dequeueReusableCellWithIdentifier("LocationCell") as LocationCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("LocationCell") as LocationCell
         var locations = location[indexPath.row]
         cell.locationLabel.text = (locations["description"] as String)
         
