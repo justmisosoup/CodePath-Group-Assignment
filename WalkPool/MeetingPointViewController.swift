@@ -33,6 +33,8 @@ class MeetingPointViewController: UIViewController {
     @IBOutlet weak var currentLocationDotImage2: UIImageView!
     @IBOutlet weak var emilyPinButton: UIButton!
     
+    var confirmationAlert = UIAlertView(title: "Routing...", message: nil, delegate: nil, cancelButtonTitle:  nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         confirmButton.alpha = 0
@@ -143,6 +145,14 @@ class MeetingPointViewController: UIViewController {
     
     // Clicking ready to go button
     @IBAction func readyToGoButton(sender: AnyObject) {
+        
+        
+        confirmationAlert.show()
+        
+        delay(1.5) {
+            self.confirmationAlert.dismissWithClickedButtonIndex(0, animated: true)
+        }
+        
         self.mapImage.image = UIImage(named: "map-final-destinations.png")
         self.messageLabel.text = "Route to 989 Market Street"
         self.loadingImg.hidden = true
