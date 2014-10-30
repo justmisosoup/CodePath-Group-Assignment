@@ -43,7 +43,7 @@ class SearchLocationViewController: UIViewController, UITableViewDelegate, UITab
     func displayLocations() {
         var urlSafe = self.destinationSearch.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         var api = NSURL(string: "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(urlSafe)&key=AIzaSyCYjN3ksYmWdb23xZ0mTkHFeiAz16LoROU")
-        var request = NSURLRequest(URL: api)
+        var request = NSURLRequest(URL: api!)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
             if error != nil {

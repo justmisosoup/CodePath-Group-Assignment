@@ -112,7 +112,7 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
         formView.tag = Int(self.formView.frame.origin.y)
         buttonView.tag = Int(self.buttonView.frame.origin.y)
         
-        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
+        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(rawValue: UInt(animationCurve << 16)), animations: {
                         self.subContent.alpha = 0
                         self.logoImg.alpha = 0
                         self.formView.frame.origin.y = -100;
@@ -134,7 +134,7 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
         var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
         var animationCurve = curveValue.integerValue
         
-        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
+        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(rawValue: UInt(animationCurve << 16)), animations: {
                         self.subContent.alpha = 1
                         self.logoImg.alpha = 1
                         self.formView.frame.origin.y = CGFloat(self.formView.tag);
