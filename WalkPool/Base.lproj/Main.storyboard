@@ -903,7 +903,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onMeetButton:" destination="7xl-H1-FBh" eventType="touchUpInside" id="GUn-rZ-CYc"/>
-                                    <segue destination="MEi-PR-3bw" kind="modal" identifier="routeToSegue" id="3pD-zz-SqE"/>
+                                    <segue destination="MEi-PR-3bw" kind="modal" identifier="routeToSegue" modalTransitionStyle="crossDissolve" id="3pD-zz-SqE"/>
                                 </connections>
                             </button>
                         </subviews>
