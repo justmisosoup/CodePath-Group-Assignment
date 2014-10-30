@@ -56,6 +56,11 @@ class LogInViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
                     self.performSegueWithIdentifier("logInSegue", sender: self)
             }
                 
+            else if(self.emailTextField.text == "dieter@gmail.com" ) && (self.passwordTextField.text == "password") {
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
+                self.performSegueWithIdentifier("logInSegue", sender: self)
+            }
+                
             // Credentials were empty UIAlertView!
                 
             else if(self.emailTextField.text.isEmpty ) && (self.passwordTextField.text.isEmpty) {
