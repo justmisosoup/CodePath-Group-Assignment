@@ -24,6 +24,7 @@
 		4094FB0C19F47466009DFC6C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4094FB0B19F47466009DFC6C /* CoreLocation.framework */; };
 		4094FB0E19F4756F009DFC6C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4094FB0D19F4756F009DFC6C /* MapKit.framework */; };
 		4094FB1019F47B13009DFC6C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4094FB0F19F47B13009DFC6C /* AccountViewController.swift */; };
+		409A07C21A01BEF900AB8A83 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A07C11A01BEF900AB8A83 /* SettingsViewController.swift */; };
 		40F1F89719F6367D00A741DA /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F1F89619F6367D00A741DA /* MatchDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		4094FB0B19F47466009DFC6C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4094FB0D19F4756F009DFC6C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4094FB0F19F47B13009DFC6C /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		409A07C11A01BEF900AB8A83 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		40F1F89619F6367D00A741DA /* MatchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				024A2D4E19DCBC8B0074E7FE /* AppDelegate.swift */,
 				024A2D5019DCBC8B0074E7FE /* ViewController.swift */,
 				024A2D5219DCBC8B0074E7FE /* Main.storyboard */,
+				409A07C11A01BEF900AB8A83 /* SettingsViewController.swift */,
 				02F87F841A01611B00274B95 /* LocationCell.swift */,
 				02D4F3DB1A005C1F0043306D /* RatingViewController.swift */,
 				4094FB0F19F47B13009DFC6C /* AccountViewController.swift */,
@@ -262,6 +265,7 @@
 				02570E1419EE17690008C36B /* MenuViewController.swift in Sources */,
 				024A2D5119DCBC8B0074E7FE /* ViewController.swift in Sources */,
 				02DC70C419E37BE400DDE103 /* DashboardViewController.swift in Sources */,
+				409A07C21A01BEF900AB8A83 /* SettingsViewController.swift in Sources */,
 				02F87F831A015F5800274B95 /* SearchLocationViewController.swift in Sources */,
 				024A2D4F19DCBC8B0074E7FE /* AppDelegate.swift in Sources */,
 			);
@@ -387,7 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WalkPool/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -398,7 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WalkPool/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

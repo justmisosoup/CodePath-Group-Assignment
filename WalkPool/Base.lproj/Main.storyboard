@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="S66-jO-yye">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="S66-jO-yye">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -345,7 +345,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNM-WC-DHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Lof-LT-pqB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="464" y="1004"/>
+            <point key="canvasLocation" x="473" y="1004"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="eSE-WN-012">
@@ -367,6 +367,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="iKT-rL-RTT" kind="modal" id="8cl-ia-K9y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vah-QQ-uB8">
                                         <rect key="frame" x="21" y="130" width="77" height="31"/>
@@ -490,7 +493,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dFi-4g-Xb4">
                                                 <rect key="frame" x="25" y="17" width="270" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Sign In" backgroundImage="white-button-active">
+                                                <state key="normal" title="Log In" backgroundImage="white-button-active">
                                                     <color key="titleColor" red="0.3529411764705882" green="0.70980392156862748" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -867,7 +870,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.9490196704864502" green="0.9490196704864502" blue="0.9647059440612793" alpha="1" colorSpace="deviceRGB"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ism-jA-gEM">
                                 <rect key="frame" x="25" y="498" width="270" height="48"/>
@@ -895,6 +898,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkF-4o-wdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="916" y="280"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="6gT-O1-7XO">
+            <objects>
+                <viewController id="iKT-rL-RTT" customClass="SettingsViewController" customModule="WalkPool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZFy-rP-PTe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nsU-PP-iDM">
+                                <rect key="frame" x="10" y="10" width="14" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressDismiss:" destination="vPx-mX-hBo" eventType="touchUpInside" id="dSA-Bn-Lti"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cOX-Fw-nrM">
+                                <rect key="frame" x="0.0" y="66" width="320" height="502"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings-bg" id="wwh-3e-FTy">
+                                        <rect key="frame" x="0.0" y="-46" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="o9d-G3-aYD">
+                                        <rect key="frame" x="259" y="39" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </switch>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="ZRH-CA-DL5">
+                                        <rect key="frame" x="16" y="146" width="294" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings-header" id="xbz-Og-623">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x4n-hu-tuN">
+                                <rect key="frame" x="12" y="12" width="14" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCloseButton:" destination="iKT-rL-RTT" eventType="touchUpInside" id="0iJ-Zb-Ilq"/>
+                                    <action selector="pressDismiss:" destination="vPx-mX-hBo" eventType="touchUpInside" id="nWh-qF-QfI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUN-Qh-FHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-719" y="1746"/>
         </scene>
         <!--Rating View Controller-->
         <scene sceneID="mhO-rr-gmW">
@@ -1042,6 +1105,8 @@
         <image name="pin-emily" width="57" height="61"/>
         <image name="pin-james" width="57" height="61"/>
         <image name="profile-photo" width="570" height="360"/>
+        <image name="settings-bg" width="320" height="568"/>
+        <image name="settings-header" width="320" height="68"/>
         <image name="white-button-active" width="270" height="48"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
