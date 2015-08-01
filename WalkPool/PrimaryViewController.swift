@@ -25,9 +25,9 @@ class PrimaryViewController: UIViewController, UIAlertViewDelegate {
 
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        dashboardViewController = storyboard.instantiateViewControllerWithIdentifier("DashboardViewController") as DashboardViewController
-        menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as UIViewController
-        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
+        dashboardViewController = storyboard.instantiateViewControllerWithIdentifier("DashboardViewController") as!DashboardViewController
+        menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! UIViewController
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as! UIViewController
 //        matchDetailViewController = storyboard.instantiateViewControllerWithIdentifier("MatchDetailViewController") as UIViewController
         
         
@@ -48,7 +48,7 @@ class PrimaryViewController: UIViewController, UIAlertViewDelegate {
 
     
     @IBAction func walkCompleted(sender: UIStoryboardSegue) {
-        var sourceViewController = sender.sourceViewController as UIViewController
+        var sourceViewController = sender.sourceViewController as! UIViewController
         
         if let checkMeetingPointViewController = sourceViewController as? MeetingPointViewController {
             dismissViewControllerAnimated(true, completion: nil)

@@ -47,7 +47,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
         //meetingPointButton.hidden = true
         
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        matchDetailViewController = storyboard.instantiateViewControllerWithIdentifier("MatchDetailViewController") as UIViewController
+        matchDetailViewController = storyboard.instantiateViewControllerWithIdentifier("MatchDetailViewController") as!UIViewController
     
     }
     
@@ -207,7 +207,7 @@ class DashboardViewController: UIViewController, UITextFieldDelegate, UIViewCont
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "matchDetailSegue") {
-            var destinationViewController = segue.destinationViewController as MatchDetailViewController
+            var destinationViewController = segue.destinationViewController as! MatchDetailViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = self
             

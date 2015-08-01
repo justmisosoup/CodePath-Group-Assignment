@@ -49,9 +49,9 @@ class SearchLocationViewController: UIViewController, UITableViewDelegate, UITab
             if error != nil {
                 println("Error occured!")
             } else  {
-                var objects = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
+                var objects = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as! NSDictionary
                 
-                self.location = objects["predictions"] as [NSDictionary]
+                self.location = objects["predictions"] as! [NSDictionary]
                 self.locationTableView.reloadData()
                 
             }
@@ -60,7 +60,7 @@ class SearchLocationViewController: UIViewController, UITableViewDelegate, UITab
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as LocationCell!
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! LocationCell!
         var place = cell.locationLabel.text!
         
         delegate?.returnWithLocation(place)
@@ -76,9 +76,9 @@ class SearchLocationViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("LocationCell") as LocationCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("LocationCell") as! LocationCell
         var locations = location[indexPath.row]
-        cell.locationLabel.text = (locations["description"] as String)
+        cell.locationLabel.text = (locations["description"] as! String)
         
         return cell
         

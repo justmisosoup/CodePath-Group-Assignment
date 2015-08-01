@@ -18,7 +18,7 @@ class MenuViewController: UIViewController, UIViewControllerTransitioningDelegat
         // Do any additional setup after loading the view.
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as! UIViewController
 
     }
 
