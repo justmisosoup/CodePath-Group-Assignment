@@ -4,7 +4,7 @@ Walkpool enables users to find walking partners within a certain distance of the
 
 **Group Contributors** 
 Corin & Sara
-> Jim Fell may not be participating as a key contributor for this project due to class participation.
+> Jim may not be participating as a key contributor for this project due to class participation.
 
 **Progress**
 * [x] Wireframes communicating general flow created and demonstrated within the project. 
