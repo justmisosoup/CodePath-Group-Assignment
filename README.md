@@ -3,7 +3,7 @@
 Walkpool enables users to find walking partners within a certain distance of themselves. This app was designed to promote safety > of individuals walking in a big city. 
 
 **Group Contributors** 
-Corin Nader [@corinnader] & Sara Menefee [@littlemisosoup].
+Corin & Sara
 > Jim Fell may not be participating as a key contributor for this project due to class participation.
 
 **Progress**
