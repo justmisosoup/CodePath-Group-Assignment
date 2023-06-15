@@ -1,6 +1,6 @@
 # Walkpool
 
-Walkpool enables users to find walking partners within a certain distance of themselves. This app was designed to promote safety > of individuals walking in a big city. 
+Walkpool enables users to find walking partners within a certain distance of themselves. This app was designed to promote safety > of individuals walking in a big city. Try again.
 
 **Group Contributors** 
 Corin & Sara
